@@ -1,0 +1,2744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediCurePlus Hospital — World-Class Care</title>
+<!-- EmailJS SDK for real email delivery -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // ── EmailJS Initialization ──
+  // To activate real email sending:
+  // 1. Go to https://www.emailjs.com  →  Sign up free
+  // 2. Add an Email Service (Gmail / Outlook etc.)
+  // 3. Create an Email Template using the variables listed below
+  // 4. Copy your Public Key, Service ID, Template ID and paste below
+  (function(){
+    if(typeof emailjs !== 'undefined'){
+      emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" }); // ← Replace
+    }
+  })();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D0A1E;
+    --primary: #00F5A0; --secondary: #7C3AED; --accent2: #F59E0B; --pink: #EC4899; --cyan: #06B6D4; --teal: #00F5A0;
+    --teal-dark: #00C47E;
+    --teal-glow: rgba(0,245,160,0.15);
+    --mint: #A7F3D0;
+    --white: #FFFFFF;
+    --off-white: #F5F0FF;
+    --text-dark: #0D0A1E;
+    --text-muted: #6D5A8A;
+    --accent: #FF6B6B;
+    --gold: #FFD700;
+    --card-bg: rgba(255,255,255,0.06);
+    --glass: rgba(255,255,255,0.10);
+    --border: rgba(0,245,160,0.2);
+    --success: #10B981;
+    --gradient: linear-gradient(135deg, #0D0A1E 0%, #1A0D35 30%, #0D1A30 60%, #0A1A18 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;}
+
+  /* ─── NAV ─── */
+  nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(13,10,30,0.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:0 5%;}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 18px rgba(0,245,160,0.5);}
+  .logo-text{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--white);}
+  .logo-text span{color:var(--teal);}
+  .nav-links{display:flex;gap:32px;list-style:none;}
+  .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:.9rem;font-weight:500;letter-spacing:.5px;transition:.3s;position:relative;}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--teal);transition:.3s;}
+  .nav-links a:hover{color:var(--white);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:var(--white);padding:10px 22px;border-radius:8px;text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.4px;transition:.3s;box-shadow:0 4px 15px rgba(0,245,160,0.35);}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,245,160,0.5);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+  .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:.3s;}
+
+  /* ─── HERO ─── */
+  #home{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:70px;}
+  .hero-bg{position:absolute;inset:0;background:var(--gradient);z-index:0;}
+  .hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;}
+  .orb1{width:500px;height:500px;background:radial-gradient(circle,var(--teal),transparent);top:-100px;right:-100px;}
+  .orb2{width:350px;height:350px;background:radial-gradient(circle,#00C47E,transparent);bottom:-80px;left:-80px;}
+  .orb3{width:200px;height:200px;background:radial-gradient(circle,var(--mint),transparent);top:40%;left:20%;}
+  .hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;max-width:1200px;width:100%;padding:0 5%;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--glass);border:1px solid var(--border);border-radius:50px;padding:8px 18px;margin-bottom:24px;font-size:.82rem;font-weight:600;letter-spacing:1px;color:var(--teal);}
+  .hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,245,160,.6);}50%{box-shadow:0 0 0 8px rgba(0,180,216,0);}}
+  .hero-title{font-family:'Playfair Display',serif;font-size:3.6rem;line-height:1.1;font-weight:900;margin-bottom:20px;}
+  .hero-title span{color:var(--teal);}
+  .hero-desc{font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.75;margin-bottom:36px;max-width:520px;}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:var(--white);padding:15px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;transition:.3s;box-shadow:0 6px 20px rgba(0,245,160,.4);border:none;cursor:pointer;}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,245,160,.55);}
+  .btn-outline{background:transparent;color:var(--white);padding:15px 32px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;transition:.3s;border:1.5px solid rgba(255,255,255,.3);cursor:pointer;}
+  .btn-outline:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-glow);}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
+  .stat-card{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:18px;text-align:center;backdrop-filter:blur(10px);}
+  .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--teal);}
+  .stat-label{font-size:.78rem;color:rgba(255,255,255,.6);margin-top:4px;letter-spacing:.5px;}
+
+  /* 3D Hospital SVG Scene */
+  .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;}
+  .hospital-3d{width:100%;max-width:520px;filter:drop-shadow(0 30px 60px rgba(0,180,216,0.4));}
+  .float-card{position:absolute;background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:10px;animation:float 3s ease-in-out infinite;}
+  .float-card.fc1{bottom:20%;left:-30px;animation-delay:0s;}
+  .float-card.fc2{top:20%;right:-20px;animation-delay:1.2s;}
+  .float-card.fc3{top:55%;right:-40px;animation-delay:.6s;}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+  .fc-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+  .fc-icon.green{background:rgba(0,245,160,.2);}
+  .fc-icon.blue{background:rgba(0,245,160,.2);}
+  .fc-icon.red{background:rgba(255,107,107,.2);}
+  .fc-info .fc-val{font-weight:700;font-size:.95rem;}
+  .fc-info .fc-key{font-size:.72rem;color:rgba(255,255,255,.6);}
+
+  /* ─── SECTIONS ─── */
+  section{padding:90px 5%;max-width:1400px;margin:0 auto;}
+  .section-tag{display:inline-block;background:var(--teal-glow);border:1px solid var(--border);color:var(--teal);font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:16px;}
+  .section-title{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;margin-bottom:16px;line-height:1.2;}
+  .section-title span{color:var(--teal);}
+  .section-desc{color:rgba(255,255,255,.65);font-size:1rem;line-height:1.8;max-width:600px;}
+
+  /* ─── ABOUT ─── */
+  #about{background:rgba(255,255,255,.02);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin-top:50px;}
+  .about-img-wrap{position:relative;}
+  .about-img-main{width:100%;border-radius:20px;background:linear-gradient(135deg,#1A0D35,#0D1A30);border:1px solid var(--border);overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;}
+  .about-badge{position:absolute;bottom:-20px;right:20px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:14px;padding:18px 22px;text-align:center;box-shadow:0 10px 30px rgba(0,245,160,.4);}
+  .about-badge strong{display:block;font-size:2rem;font-family:'Playfair Display',serif;}
+  .about-badge span{font-size:.8rem;opacity:.85;}
+  .about-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;}
+  .about-feat{display:flex;align-items:flex-start;gap:12px;background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:16px;}
+  .feat-icon{width:40px;height:40px;min-width:40px;border-radius:10px;background:var(--teal-glow);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;}
+  .feat-text strong{display:block;font-size:.9rem;margin-bottom:4px;}
+  .feat-text p{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.6;}
+
+  /* ─── SERVICES ─── */
+  #services{background:linear-gradient(180deg,rgba(0,245,160,.04) 0%,transparent 100%);}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px;}
+  .service-card{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:28px;transition:.4s;cursor:default;position:relative;overflow:hidden;}
+  .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent);opacity:0;transition:.4s;}
+  .service-card:hover{transform:translateY(-6px);border-color:var(--teal);background:rgba(0,245,160,.06);}
+  .service-card:hover::before{opacity:1;}
+  .svc-icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,rgba(0,245,160,.2),rgba(0,119,168,.2));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px;}
+  .service-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;}
+  .service-card p{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.7;}
+  .svc-tag{display:inline-block;margin-top:14px;font-size:.72rem;color:var(--teal);background:var(--teal-glow);padding:4px 12px;border-radius:50px;font-weight:600;}
+
+  /* ─── DOCTORS ─── */
+  #doctors{background:rgba(255,255,255,.015);}
+  .doctors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px;}
+  .doctor-card{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:.4s;cursor:pointer;}
+  .doctor-card:hover{transform:translateY(-8px);border-color:var(--teal);box-shadow:0 20px 50px rgba(0,245,160,.2);}
+  .doc-img{height:220px;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden;}
+  .doc-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(transparent,var(--navy));}
+  .doc-info{padding:18px;}
+  .doc-name{font-weight:700;font-size:1rem;margin-bottom:4px;}
+  .doc-spec{color:var(--teal);font-size:.8rem;font-weight:600;margin-bottom:8px;}
+  .doc-meta{display:flex;align-items:center;justify-content:space-between;font-size:.76rem;color:rgba(255,255,255,.55);}
+  .doc-stars{color:var(--gold);font-size:.85rem;}
+  .doc-avail{display:flex;align-items:center;gap:6px;margin-top:12px;font-size:.78rem;}
+  .avail-dot{width:8px;height:8px;border-radius:50%;background:var(--success);box-shadow:0 0 6px var(--success);}
+
+  /* ─── CONTACT ─── */
+  #contact{background:linear-gradient(180deg,rgba(0,245,160,.04) 0%,transparent 100%);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start;margin-top:50px;}
+  .contact-info-cards{display:flex;flex-direction:column;gap:16px;}
+  .cinfo-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;align-items:center;gap:16px;transition:.3s;}
+  .cinfo-card:hover{border-color:var(--teal);background:var(--teal-glow);}
+  .cinfo-icon{width:46px;height:46px;min-width:46px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));display:flex;align-items:center;justify-content:center;font-size:20px;}
+  .cinfo-text strong{display:block;font-size:.9rem;margin-bottom:4px;}
+  .cinfo-text p{font-size:.82rem;color:rgba(255,255,255,.6);}
+  .map-box{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;height:180px;display:flex;align-items:center;justify-content:center;margin-top:16px;font-size:2.5rem;flex-direction:column;gap:8px;}
+  .map-box p{font-size:.85rem;color:rgba(255,255,255,.5);}
+  .contact-form{background:var(--card-bg);border:1px solid var(--border);border-radius:20px;padding:36px;}
+  .contact-form h3{font-size:1.4rem;font-weight:700;margin-bottom:24px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+  .form-group label{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);letter-spacing:.3px;}
+  .form-group input,.form-group textarea,.form-group select{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:12px 16px;color:var(--white);font-family:'Inter',sans-serif;font-size:.9rem;transition:.3s;outline:none;width:100%;}
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--teal);background:rgba(0,245,160,.06);}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.3);}
+  .form-group select option{background:#0D0A1E;color:var(--white);}
+  .form-group textarea{resize:vertical;min-height:110px;}
+
+  /* ─── BOOK APPOINTMENT ─── */
+  #appointment{background:rgba(255,255,255,.02);}
+  .appt-wrap{max-width:800px;margin:50px auto 0;background:var(--card-bg);border:1px solid var(--border);border-radius:24px;padding:48px;position:relative;overflow:hidden;}
+  .appt-wrap::before{content:'';position:absolute;top:-2px;left:30%;right:30%;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent);}
+  .appt-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .appt-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;margin-bottom:8px;}
+  .appt-subtitle{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:32px;}
+  .steps-bar{display:flex;gap:0;margin-bottom:36px;}
+  .step{flex:1;display:flex;align-items:center;position:relative;}
+  .step-circle{width:34px;height:34px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;background:var(--navy);z-index:1;transition:.3s;min-width:34px;}
+  .step.active .step-circle,.step.done .step-circle{border-color:var(--teal);background:var(--teal);color:var(--navy);}
+  .step-line{flex:1;height:2px;background:var(--border);margin:0 6px;}
+  .step.done .step-line,.step.active .step-line{background:var(--teal);}
+  .step-label{position:absolute;top:44px;left:50%;transform:translateX(-50%);font-size:.68rem;color:rgba(255,255,255,.5);white-space:nowrap;font-weight:600;}
+  .step.active .step-label{color:var(--teal);}
+  .appt-note{background:linear-gradient(135deg,rgba(0,245,160,.1),rgba(0,119,168,.1));border:1px solid var(--border);border-radius:12px;padding:16px;margin-top:24px;display:flex;gap:12px;align-items:flex-start;}
+  .note-icon{font-size:22px;margin-top:2px;}
+  .note-text{font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.6;}
+  .note-text strong{color:var(--teal);}
+
+  /* Confirmation Modal */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;}
+  .modal-overlay.show{display:flex;}
+  .modal{background:linear-gradient(135deg,#1A0D35,#0A1428);border:1px solid var(--teal);border-radius:24px;padding:48px;max-width:500px;width:100%;text-align:center;animation:modalIn .4s cubic-bezier(.175,.885,.32,1.275);}
+  @keyframes modalIn{from{opacity:0;transform:scale(.85) translateY(30px);}to{opacity:1;transform:scale(1) translateY(0);}}
+  .modal-tick{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--success),#16a34a);margin:0 auto 24px;display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:0 10px 30px rgba(0,245,160,.4);animation:tickPop .5s .2s both cubic-bezier(.175,.885,.32,1.275);}
+  @keyframes tickPop{from{transform:scale(0);}to{transform:scale(1);}}
+  .modal h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:12px;}
+  .modal p{color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.7;margin-bottom:8px;}
+  .modal-detail{background:rgba(255,255,255,.06);border-radius:12px;padding:16px;margin:20px 0;text-align:left;}
+  .modal-detail-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+  .modal-detail-row:last-child{border-bottom:none;}
+  .modal-detail-row span:first-child{font-size:.8rem;color:rgba(255,255,255,.5);}
+  .modal-detail-row span:last-child{font-size:.85rem;font-weight:600;color:var(--teal);}
+  .notif-row{display:flex;gap:12px;margin:16px 0;justify-content:center;}
+  .notif-badge{display:flex;align-items:center;gap:8px;background:rgba(34,197,94,.12);border:1px solid rgba(0,245,160,.3);border-radius:8px;padding:8px 14px;font-size:.8rem;color:var(--success);}
+
+  /* ─── FOOTER ─── */
+  footer{background:rgba(0,0,0,.4);border-top:1px solid var(--border);padding:50px 5% 30px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto 40px;}
+  .footer-brand p{color:rgba(255,255,255,.55);font-size:.85rem;line-height:1.8;margin:16px 0;}
+  .footer-socials{display:flex;gap:10px;}
+  .social-btn{width:36px;height:36px;border-radius:8px;background:var(--glass);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:.3s;text-decoration:none;}
+  .social-btn:hover{border-color:var(--teal);background:var(--teal-glow);}
+  .footer-col h4{font-size:.9rem;font-weight:700;margin-bottom:16px;color:var(--teal);}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-col ul li a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.84rem;transition:.3s;}
+  .footer-col ul li a:hover{color:var(--teal);}
+  .footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border);font-size:.8rem;color:rgba(255,255,255,.4);}
+  .emergency-bar{background:linear-gradient(90deg,#FF6B6B,#ee3333);padding:10px 5%;text-align:center;font-size:.88rem;font-weight:600;letter-spacing:.5px;}
+  .emergency-bar a{color:var(--white);font-weight:900;}
+
+  /* ─── RESPONSIVE ─── */
+  @media(max-width:1024px){
+    .hero-content{grid-template-columns:1fr;text-align:center;}
+    .hero-visual{display:none;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .doctors-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:768px){
+    .nav-links,.nav-cta{display:none;}
+    .hamburger{display:flex;}
+    .hero-title{font-size:2.4rem;}
+    .services-grid{grid-template-columns:1fr;}
+    .doctors-grid{grid-template-columns:1fr 1fr;}
+    .appt-grid{grid-template-columns:1fr;}
+    .appt-wrap{padding:28px 20px;}
+    .form-row{grid-template-columns:1fr;}
+    .section-title{font-size:2rem;}
+    .footer-grid{grid-template-columns:1fr;}
+    .hero-stats{grid-template-columns:repeat(3,1fr);}
+    .steps-bar{overflow:visible;}
+  }
+  @media(max-width:480px){
+    .doctors-grid{grid-template-columns:1fr;}
+    .hero-stats{grid-template-columns:1fr 1fr;}
+    .about-features{grid-template-columns:1fr;}
+  }
+
+  /* Scroll animations */
+  .fade-up{opacity:0;transform:translateY(30px);transition:.7s cubic-bezier(.4,0,.2,1);}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+
+  /* Mobile Nav */
+  .mobile-menu{position:fixed;top:70px;left:0;right:0;background:rgba(10,26,15,.97);backdrop-filter:blur(20px);padding:24px 5%;display:none;flex-direction:column;gap:16px;z-index:999;border-bottom:1px solid var(--border);}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:1rem;font-weight:500;padding:8px 0;border-bottom:1px solid var(--border);}
+
+  /* Tooltip */
+  .tooltip{position:relative;}
+  .tooltip:hover::after{content:attr(data-tip);position:absolute;bottom:110%;left:50%;transform:translateX(-50%);background:var(--teal-dark);color:#fff;padding:6px 12px;border-radius:6px;font-size:.75rem;white-space:nowrap;pointer-events:none;z-index:100;}
+
+  /* Success toast */
+  .toast{position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;padding:14px 22px;border-radius:12px;font-weight:600;font-size:.9rem;transform:translateY(100px);opacity:0;transition:.4s;z-index:9999;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,245,160,.4);}
+  .toast.show{transform:translateY(0);opacity:1;}
+
+  /* ══════ VIBRANT THEME OVERRIDES & 3D EFFECTS ══════ */
+
+  /* Body background — deep cosmic gradient */
+  body {
+    background: linear-gradient(135deg, #0D0A1E 0%, #130A28 25%, #0D1635 50%, #0A1A18 75%, #150A2A 100%);
+    min-height: 100vh;
+  }
+
+  /* Animated gradient background mesh */
+  body::before {
+    content:'';
+    position:fixed;inset:0;z-index:-1;
+    background:
+      radial-gradient(ellipse 700px 500px at 10% 10%, rgba(124,58,237,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 600px 400px at 90% 20%, rgba(0,245,160,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 500px 600px at 50% 80%, rgba(6,182,212,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse 400px 300px at 80% 70%, rgba(236,72,153,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 300px 400px at 20% 60%, rgba(245,158,11,0.06) 0%, transparent 50%);
+  }
+
+  /* ── LOGO 3D glow brand ── */
+  .logo-icon {
+    background: linear-gradient(135deg, #00F5A0, #7C3AED) !important;
+    box-shadow: 0 0 30px rgba(0,245,160,0.6), 0 0 60px rgba(124,58,237,0.3) !important;
+    transform: perspective(300px) rotateY(-5deg);
+    transition: .3s;
+  }
+  .logo-icon:hover { transform: perspective(300px) rotateY(5deg) scale(1.1); }
+  .logo-text { font-size:1.4rem !important; }
+  .logo-text span {
+    background: linear-gradient(90deg, #00F5A0, #7C3AED, #EC4899);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── NAV vibrant ── */
+  nav {
+    background: rgba(13,10,30,0.95) !important;
+    border-bottom: 1px solid rgba(0,245,160,0.2) !important;
+    box-shadow: 0 4px 30px rgba(124,58,237,0.15);
+  }
+  .nav-cta {
+    background: linear-gradient(135deg, #00F5A0, #06B6D4, #7C3AED) !important;
+    background-size: 200% !important;
+    animation: gradShift 3s ease infinite;
+    box-shadow: 0 4px 20px rgba(0,245,160,0.4), 0 0 40px rgba(124,58,237,0.2) !important;
+  }
+  @keyframes gradShift {
+    0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%}
+  }
+
+  /* ── EMERGENCY BAR vibrant ── */
+  .emergency-bar {
+    background: linear-gradient(90deg, #7C3AED, #EC4899, #F59E0B, #EC4899, #7C3AED) !important;
+    background-size: 300% !important;
+    animation: barShift 4s linear infinite;
+  }
+  @keyframes barShift { 0%{background-position:0%} 100%{background-position:300%} }
+
+  /* ── HERO 3D Orbs — multi-color ── */
+  .orb1 { background: radial-gradient(circle, #7C3AED, transparent) !important; opacity:.45 !important; }
+  .orb2 { background: radial-gradient(circle, #00F5A0, transparent) !important; opacity:.4 !important; }
+  .orb3 { background: radial-gradient(circle, #EC4899, transparent) !important; opacity:.35 !important; }
+
+  /* Extra orbs */
+  .hero-bg::after {
+    content:''; position:absolute; width:250px; height:250px;
+    background: radial-gradient(circle, #F59E0B, transparent);
+    border-radius:50%; filter:blur(80px); opacity:.25;
+    top:60%; left:60%; pointer-events:none;
+  }
+
+  /* ── HERO badge vibrant ── */
+  .hero-badge {
+    background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(0,245,160,0.1)) !important;
+    border: 1px solid rgba(0,245,160,0.35) !important;
+    color: #00F5A0 !important;
+  }
+  .hero-badge::before { background: #00F5A0 !important; }
+
+  /* ── HERO title gradient ── */
+  .hero-title span {
+    background: linear-gradient(90deg, #00F5A0, #06B6D4, #7C3AED);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── STAT CARDS 3D ── */
+  .stat-card {
+    background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(0,245,160,0.06)) !important;
+    border: 1px solid rgba(0,245,160,0.25) !important;
+    transform: perspective(600px) rotateX(3deg);
+    transition: .4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,.3), 0 0 20px rgba(124,58,237,0.1);
+  }
+  .stat-card:hover { transform: perspective(600px) rotateX(0deg) translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,.4), 0 0 30px rgba(0,245,160,0.2); }
+  .stat-num { 
+    background: linear-gradient(135deg, #00F5A0, #06B6D4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── BUTTONS vibrant 3D ── */
+  .btn-primary {
+    background: linear-gradient(135deg, #00F5A0 0%, #06B6D4 50%, #7C3AED 100%) !important;
+    box-shadow: 0 6px 25px rgba(0,245,160,0.4), 0 0 0 1px rgba(0,245,160,0.2),
+                inset 0 1px 0 rgba(255,255,255,0.2) !important;
+    transform: perspective(500px) translateZ(0);
+    transition: all .3s cubic-bezier(.175,.885,.32,1.275) !important;
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::after {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+    border-radius:inherit;
+  }
+  .btn-primary:hover {
+    transform: perspective(500px) translateZ(10px) translateY(-3px) !important;
+    box-shadow: 0 15px 35px rgba(0,245,160,0.5), 0 0 0 2px rgba(0,245,160,0.3),
+                0 5px 20px rgba(124,58,237,0.3) !important;
+  }
+
+  /* ── SECTION TAGS vibrant ── */
+  .section-tag {
+    background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(0,245,160,0.15)) !important;
+    border: 1px solid rgba(0,245,160,0.3) !important;
+    color: #00F5A0 !important;
+  }
+
+  /* ── SECTION TITLE gradient ── */
+  .section-title span {
+    background: linear-gradient(90deg, #00F5A0, #06B6D4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── SERVICE CARDS vibrant 3D ── */
+  .service-card {
+    background: linear-gradient(135deg, rgba(13,10,30,0.9), rgba(20,10,40,0.95)) !important;
+    border: 1px solid rgba(124,58,237,0.2) !important;
+    transform: perspective(800px) rotateY(0deg) translateZ(0);
+    transition: all .4s cubic-bezier(.175,.885,.32,1.275) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+  .service-card:hover {
+    transform: perspective(800px) rotateY(-3deg) translateZ(20px) translateY(-8px) !important;
+    border-color: #00F5A0 !important;
+    background: linear-gradient(135deg, rgba(0,245,160,0.07), rgba(124,58,237,0.08)) !important;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 30px rgba(0,245,160,0.15), -5px 0 20px rgba(124,58,237,0.1) !important;
+  }
+  .service-card::before { background: linear-gradient(90deg, #00F5A0, #7C3AED, #EC4899) !important; }
+
+  /* Service icons vibrant each ── */
+  .services-grid .service-card:nth-child(1) .svc-icon { background: linear-gradient(135deg,rgba(236,72,153,0.3),rgba(124,58,237,0.2)); box-shadow:0 0 20px rgba(236,72,153,0.3); }
+  .services-grid .service-card:nth-child(2) .svc-icon { background: linear-gradient(135deg,rgba(124,58,237,0.3),rgba(6,182,212,0.2)); box-shadow:0 0 20px rgba(124,58,237,0.3); }
+  .services-grid .service-card:nth-child(3) .svc-icon { background: linear-gradient(135deg,rgba(6,182,212,0.3),rgba(0,245,160,0.2)); box-shadow:0 0 20px rgba(6,182,212,0.3); }
+  .services-grid .service-card:nth-child(4) .svc-icon { background: linear-gradient(135deg,rgba(245,158,11,0.3),rgba(236,72,153,0.2)); box-shadow:0 0 20px rgba(245,158,11,0.3); }
+  .services-grid .service-card:nth-child(5) .svc-icon { background: linear-gradient(135deg,rgba(0,245,160,0.3),rgba(6,182,212,0.2)); box-shadow:0 0 20px rgba(0,245,160,0.3); }
+  .services-grid .service-card:nth-child(6) .svc-icon { background: linear-gradient(135deg,rgba(236,72,153,0.3),rgba(245,158,11,0.2)); box-shadow:0 0 20px rgba(236,72,153,0.3); }
+  .services-grid .service-card:nth-child(7) .svc-icon { background: linear-gradient(135deg,rgba(124,58,237,0.3),rgba(0,245,160,0.2)); box-shadow:0 0 20px rgba(124,58,237,0.3); }
+  .services-grid .service-card:nth-child(8) .svc-icon { background: linear-gradient(135deg,rgba(6,182,212,0.3),rgba(124,58,237,0.2)); box-shadow:0 0 20px rgba(6,182,212,0.3); }
+  .services-grid .service-card:nth-child(9) .svc-icon { background: linear-gradient(135deg,rgba(245,158,11,0.3),rgba(6,182,212,0.2)); box-shadow:0 0 20px rgba(245,158,11,0.3); }
+
+  /* ── DOCTOR CARDS 3D vibrant ── */
+  .doctor-card {
+    background: linear-gradient(135deg, rgba(13,10,30,0.95), rgba(25,10,45,0.9)) !important;
+    transform: perspective(600px) rotateX(2deg) translateZ(0);
+    transition: all .4s cubic-bezier(.175,.885,.32,1.275) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.04);
+  }
+  .doctor-card:hover {
+    transform: perspective(600px) rotateX(0deg) translateZ(15px) translateY(-10px) !important;
+    box-shadow: 0 30px 60px rgba(0,0,0,.6), 0 0 40px rgba(0,245,160,0.2), 0 0 60px rgba(124,58,237,0.1) !important;
+    border-color: #00F5A0 !important;
+  }
+  /* Each doc card a different accent color */
+  .doctors-grid .doctor-card:nth-child(1) { border-color: rgba(236,72,153,0.3) !important; }
+  .doctors-grid .doctor-card:nth-child(2) { border-color: rgba(124,58,237,0.3) !important; }
+  .doctors-grid .doctor-card:nth-child(3) { border-color: rgba(6,182,212,0.3) !important; }
+  .doctors-grid .doctor-card:nth-child(4) { border-color: rgba(245,158,11,0.3) !important; }
+  .doctors-grid .doctor-card:nth-child(5) { border-color: rgba(0,245,160,0.3) !important; }
+  .doctors-grid .doctor-card:nth-child(6) { border-color: rgba(236,72,153,0.3) !important; }
+  .doctors-grid .doctor-card:nth-child(7) { border-color: rgba(245,158,11,0.3) !important; }
+  .doctors-grid .doctor-card:nth-child(8) { border-color: rgba(124,58,237,0.3) !important; }
+  .doc-spec {
+    background: linear-gradient(90deg, #00F5A0, #06B6D4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700 !important;
+  }
+
+  /* ── APPOINTMENT WRAP 3D ── */
+  .appt-wrap {
+    background: linear-gradient(135deg, rgba(13,10,30,0.97), rgba(20,10,45,0.97)) !important;
+    border: 1px solid rgba(0,245,160,0.2) !important;
+    box-shadow: 0 40px 80px rgba(0,0,0,.6),
+                0 0 60px rgba(124,58,237,0.12),
+                inset 0 1px 0 rgba(255,255,255,.06);
+    transform: perspective(1200px) rotateX(1deg);
+    transition: .4s;
+  }
+  .appt-wrap:hover { transform: perspective(1200px) rotateX(0deg); }
+  .appt-wrap::before { background: linear-gradient(90deg, #7C3AED, #00F5A0, #EC4899) !important; }
+
+  /* ── STEP CIRCLES vibrant ── */
+  .step.active .step-circle, .step.done .step-circle {
+    background: linear-gradient(135deg, #00F5A0, #7C3AED) !important;
+    border-color: #00F5A0 !important;
+    box-shadow: 0 0 20px rgba(0,245,160,0.5);
+  }
+  .step.done .step-line, .step.active .step-line {
+    background: linear-gradient(90deg, #00F5A0, #7C3AED) !important;
+  }
+
+  /* ── FORM INPUTS vibrant focus ── */
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    border-color: #00F5A0 !important;
+    background: rgba(0,245,160,0.05) !important;
+    box-shadow: 0 0 20px rgba(0,245,160,0.15), inset 0 0 10px rgba(0,245,160,0.05) !important;
+  }
+
+  /* ── CONTACT CARDS 3D ── */
+  .cinfo-card {
+    transform: perspective(600px) translateZ(0);
+    transition: all .3s cubic-bezier(.175,.885,.32,1.275) !important;
+  }
+  .cinfo-card:hover {
+    transform: perspective(600px) translateZ(15px) translateY(-4px) !important;
+    border-color: #00F5A0 !important;
+    background: linear-gradient(135deg, rgba(0,245,160,0.08), rgba(124,58,237,0.06)) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,.4), 0 0 20px rgba(0,245,160,0.15) !important;
+  }
+  .cinfo-icon {
+    background: linear-gradient(135deg, #00F5A0, #7C3AED) !important;
+    box-shadow: 0 0 20px rgba(0,245,160,0.4) !important;
+  }
+
+  /* ── MODAL vibrant ── */
+  .modal {
+    background: linear-gradient(135deg, #0D0A1E, #1A0D35, #0D1A30) !important;
+    border: 1px solid rgba(0,245,160,0.35) !important;
+    box-shadow: 0 40px 80px rgba(0,0,0,.8), 0 0 60px rgba(0,245,160,0.2), 0 0 100px rgba(124,58,237,0.15) !important;
+  }
+  .modal-tick { background: linear-gradient(135deg, #00F5A0, #06B6D4) !important; box-shadow: 0 10px 30px rgba(0,245,160,0.5) !important; }
+
+  /* ── ABOUT BADGE vibrant ── */
+  .about-badge { background: linear-gradient(135deg, #00F5A0, #7C3AED) !important; box-shadow: 0 10px 30px rgba(0,245,160,0.4), 0 0 40px rgba(124,58,237,0.3) !important; }
+
+  /* ── ABOUT FEATURES vibrant ── */
+  .about-feat:nth-child(1) { border-color: rgba(0,245,160,0.3) !important; }
+  .about-feat:nth-child(2) { border-color: rgba(124,58,237,0.3) !important; }
+  .about-feat:nth-child(3) { border-color: rgba(6,182,212,0.3) !important; }
+  .about-feat:nth-child(4) { border-color: rgba(236,72,153,0.3) !important; }
+  .about-feat { transition: .3s; }
+  .about-feat:hover { transform: translateX(6px); }
+
+  /* ── FOOTER vibrant ── */
+  footer { background: rgba(5,3,15,0.95) !important; border-top: 1px solid rgba(0,245,160,0.15) !important; }
+  .footer-col h4 {
+    background: linear-gradient(90deg, #00F5A0, #06B6D4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .social-btn:hover { border-color: #00F5A0 !important; background: linear-gradient(135deg,rgba(0,245,160,0.15),rgba(124,58,237,0.1)) !important; box-shadow: 0 0 15px rgba(0,245,160,0.3); }
+
+  /* ── HOSPITAL 3D SVG drop shadow vibrant ── */
+  .hospital-3d { filter: drop-shadow(0 30px 60px rgba(0,245,160,0.3)) drop-shadow(0 0 80px rgba(124,58,237,0.2)) !important; }
+
+  /* ── FLOAT CARDS vibrant ── */
+  .float-card {
+    background: linear-gradient(135deg, rgba(13,10,30,0.85), rgba(20,10,45,0.85)) !important;
+    border: 1px solid rgba(0,245,160,0.25) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,.4), 0 0 20px rgba(0,245,160,0.1);
+  }
+
+  /* ── TOAST vibrant ── */
+  .toast { background: linear-gradient(135deg, #00F5A0, #7C3AED) !important; box-shadow: 0 10px 30px rgba(0,245,160,0.4) !important; }
+
+  /* ── SECTION BACKGROUNDS vibrant subtle ── */
+  #services { background: linear-gradient(180deg, rgba(124,58,237,0.05) 0%, transparent 100%) !important; }
+  #appointment { background: linear-gradient(180deg, rgba(0,245,160,0.04) 0%, rgba(124,58,237,0.03) 100%) !important; }
+  #contact { background: linear-gradient(180deg, rgba(6,182,212,0.04) 0%, transparent 100%) !important; }
+
+  /* ── SVC TAGS vibrant ── */
+  .svc-tag { background: linear-gradient(135deg, rgba(0,245,160,0.15), rgba(124,58,237,0.15)) !important; color: #00F5A0 !important; border: 1px solid rgba(0,245,160,0.2); }
+
+  /* ── AVAIL DOT pulse green ── */
+  .avail-dot { background: #00F5A0 !important; box-shadow: 0 0 8px #00F5A0 !important; }
+
+  /* ── APPT NOTE vibrant ── */
+  .appt-note { background: linear-gradient(135deg, rgba(0,245,160,0.08), rgba(124,58,237,0.06)) !important; border: 1px solid rgba(0,245,160,0.2) !important; }
+  .note-text strong { color: #00F5A0 !important; }
+
+  /* ── NOTIF BADGES vibrant ── */
+  .notif-badge { background: rgba(0,245,160,0.1) !important; border-color: rgba(0,245,160,0.3) !important; color: #00F5A0 !important; }
+
+  /* ── MOBILE MENU vibrant ── */
+  .mobile-menu { background: rgba(13,10,30,0.98) !important; border-bottom: 1px solid rgba(0,245,160,0.2) !important; }
+
+  /* ── Scrollbar vibrant ── */
+  ::-webkit-scrollbar { width:6px; }
+  ::-webkit-scrollbar-track { background:#0D0A1E; }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(#00F5A0,#7C3AED); border-radius:3px; }
+
+  /* ── CONTACT FORM vibrant ── */
+  .contact-form {
+    background: linear-gradient(135deg, rgba(13,10,30,0.95), rgba(20,10,45,0.9)) !important;
+    border: 1px solid rgba(0,245,160,0.18) !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5), 0 0 40px rgba(124,58,237,0.08) !important;
+  }
+
+  /* ── PARTICLE SPARKLE EFFECT (CSS only) ── */
+  @keyframes sparkle {
+    0%,100%{opacity:0;transform:scale(0);}
+    50%{opacity:1;transform:scale(1);}
+  }
+
+  /* ── APPT TITLE gradient ── */
+  .appt-title {
+    background: linear-gradient(90deg, #00F5A0, #7C3AED, #EC4899);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+
+  /* ══════ MEDICUREPLUS — PURE GREEN VIBRANT OVERRIDE ══════ */
+  :root {
+    --navy: #061409 !important;
+    --teal: #00E676 !important;
+    --teal-dark: #00C853 !important;
+    --teal-glow: rgba(0,230,118,0.15) !important;
+    --mint: #B9F6CA !important;
+    --border: rgba(0,230,118,0.22) !important;
+    --success: #00E676 !important;
+    --gradient: linear-gradient(135deg,#061409 0%,#0A2010 35%,#0B2D12 70%,#071A0A 100%) !important;
+  }
+
+  html, body { background: #071209 !important; }
+
+  body {
+    background:
+      linear-gradient(135deg,#061409 0%,#0A2010 35%,#0B2D12 70%,#071A0A 100%) !important;
+    min-height:100vh;
+  }
+
+  body::before {
+    background:
+      radial-gradient(ellipse 700px 500px at 10% 10%, rgba(0,200,83,0.13) 0%, transparent 60%),
+      radial-gradient(ellipse 600px 400px at 90% 20%, rgba(0,230,118,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 500px 600px at 50% 80%, rgba(76,175,80,0.09) 0%, transparent 55%),
+      radial-gradient(ellipse 400px 300px at 80% 70%, rgba(129,199,132,0.07) 0%, transparent 50%),
+      radial-gradient(ellipse 300px 400px at 20% 60%, rgba(0,230,118,0.06) 0%, transparent 50%) !important;
+  }
+
+  /* NAV */
+  nav { background: rgba(6,20,9,0.95) !important; border-bottom: 1px solid rgba(0,230,118,0.18) !important; box-shadow: 0 4px 30px rgba(0,150,60,0.12) !important; }
+  .mobile-menu { background: rgba(6,20,9,0.98) !important; border-bottom: 1px solid rgba(0,230,118,0.18) !important; }
+
+  /* LOGO */
+  .logo-icon {
+    background: linear-gradient(135deg,#00E676,#00C853) !important;
+    box-shadow: 0 0 28px rgba(0,230,118,0.6), 0 0 55px rgba(0,200,83,0.25) !important;
+  }
+  .logo-text span {
+    background: linear-gradient(90deg,#00E676,#69F0AE,#00C853) !important;
+    -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important;
+    background-clip:text !important;
+  }
+
+  /* HERO BADGE */
+  .hero-badge { background: linear-gradient(135deg,rgba(0,200,83,0.18),rgba(0,230,118,0.1)) !important; border:1px solid rgba(0,230,118,0.35) !important; color:#00E676 !important; }
+  .hero-badge::before { background:#00E676 !important; }
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,230,118,.65);}50%{box-shadow:0 0 0 8px rgba(0,230,118,0);}}
+
+  /* HERO TITLE */
+  .hero-title span { background:linear-gradient(90deg,#00E676,#69F0AE,#00C853) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important; }
+
+  /* HERO ORBS */
+  .orb1 { background:radial-gradient(circle,#00C853,transparent) !important; opacity:.5 !important; }
+  .orb2 { background:radial-gradient(circle,#69F0AE,transparent) !important; opacity:.4 !important; }
+  .orb3 { background:radial-gradient(circle,#00E676,transparent) !important; opacity:.35 !important; }
+  .hero-bg::after { background:radial-gradient(circle,#B9F6CA,transparent) !important; }
+
+  /* EMERGENCY BAR */
+  .emergency-bar { background:linear-gradient(90deg,#00C853,#00E676,#69F0AE,#00E676,#00C853) !important; background-size:300% !important; animation:barShift 4s linear infinite !important; }
+
+  /* NAV CTA */
+  .nav-cta { background:linear-gradient(135deg,#00E676,#4CAF50,#00C853) !important; box-shadow:0 4px 20px rgba(0,230,118,0.45),0 0 35px rgba(0,200,83,0.18) !important; }
+
+  /* BUTTONS */
+  .btn-primary { background:linear-gradient(135deg,#00E676 0%,#00C853 50%,#4CAF50 100%) !important; box-shadow:0 6px 25px rgba(0,230,118,0.45),inset 0 1px 0 rgba(255,255,255,0.2) !important; }
+  .btn-primary:hover { box-shadow:0 14px 35px rgba(0,230,118,0.55),0 0 50px rgba(0,200,83,0.2) !important; }
+  .btn-outline:hover { border-color:#00E676 !important; color:#00E676 !important; background:rgba(0,230,118,0.08) !important; }
+
+  /* STAT CARDS */
+  .stat-card { background:linear-gradient(135deg,rgba(0,200,83,0.1),rgba(0,230,118,0.05)) !important; border:1px solid rgba(0,230,118,0.2) !important; box-shadow:0 10px 30px rgba(0,0,0,.35),0 0 20px rgba(0,200,83,0.08) !important; }
+  .stat-num { background:linear-gradient(135deg,#00E676,#69F0AE) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important; }
+
+  /* SECTION TAGS */
+  .section-tag { background:linear-gradient(135deg,rgba(0,200,83,0.18),rgba(0,230,118,0.1)) !important; border:1px solid rgba(0,230,118,0.3) !important; color:#00E676 !important; }
+  .section-title span { background:linear-gradient(90deg,#00E676,#00C853) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important; }
+
+  /* SERVICE CARDS */
+  .service-card { background:linear-gradient(135deg,rgba(6,20,9,0.92),rgba(10,30,12,0.96)) !important; border:1px solid rgba(0,230,118,0.15) !important; box-shadow:0 8px 30px rgba(0,0,0,.45),inset 0 1px 0 rgba(0,230,118,0.05) !important; }
+  .service-card:hover { background:linear-gradient(135deg,rgba(0,230,118,0.07),rgba(0,200,83,0.04)) !important; border-color:#00E676 !important; box-shadow:0 25px 50px rgba(0,0,0,.5),0 0 30px rgba(0,230,118,0.18) !important; transform:perspective(800px) rotateY(-3deg) translateZ(20px) translateY(-8px) !important; }
+  .service-card::before { background:linear-gradient(90deg,transparent,#00E676,#69F0AE,transparent) !important; }
+  .svc-icon { border:1px solid rgba(0,230,118,0.2) !important; }
+  .svc-tag { background:linear-gradient(135deg,rgba(0,230,118,0.15),rgba(0,200,83,0.1)) !important; color:#00E676 !important; border:1px solid rgba(0,230,118,0.2) !important; }
+
+  /* Each service icon — green variants */
+  .services-grid .service-card:nth-child(1) .svc-icon{background:linear-gradient(135deg,rgba(0,230,118,0.3),rgba(0,200,83,0.15));box-shadow:0 0 20px rgba(0,230,118,0.25);}
+  .services-grid .service-card:nth-child(2) .svc-icon{background:linear-gradient(135deg,rgba(76,175,80,0.3),rgba(0,230,118,0.15));box-shadow:0 0 20px rgba(76,175,80,0.25);}
+  .services-grid .service-card:nth-child(3) .svc-icon{background:linear-gradient(135deg,rgba(129,199,132,0.3),rgba(0,230,118,0.2));box-shadow:0 0 20px rgba(129,199,132,0.25);}
+  .services-grid .service-card:nth-child(4) .svc-icon{background:linear-gradient(135deg,rgba(0,200,83,0.3),rgba(105,240,174,0.15));box-shadow:0 0 20px rgba(0,200,83,0.25);}
+  .services-grid .service-card:nth-child(5) .svc-icon{background:linear-gradient(135deg,rgba(0,230,118,0.35),rgba(0,200,83,0.18));box-shadow:0 0 22px rgba(0,230,118,0.3);}
+  .services-grid .service-card:nth-child(6) .svc-icon{background:linear-gradient(135deg,rgba(105,240,174,0.3),rgba(0,230,118,0.15));box-shadow:0 0 20px rgba(105,240,174,0.25);}
+  .services-grid .service-card:nth-child(7) .svc-icon{background:linear-gradient(135deg,rgba(76,175,80,0.3),rgba(0,200,83,0.2));box-shadow:0 0 20px rgba(76,175,80,0.25);}
+  .services-grid .service-card:nth-child(8) .svc-icon{background:linear-gradient(135deg,rgba(0,230,118,0.3),rgba(129,199,132,0.15));box-shadow:0 0 20px rgba(0,230,118,0.22);}
+  .services-grid .service-card:nth-child(9) .svc-icon{background:linear-gradient(135deg,rgba(0,200,83,0.3),rgba(0,230,118,0.18));box-shadow:0 0 20px rgba(0,200,83,0.25);}
+
+  /* DOCTOR CARDS */
+  .doctor-card { background:linear-gradient(135deg,rgba(6,20,9,0.96),rgba(10,28,12,0.92)) !important; border:1px solid rgba(0,230,118,0.14) !important; box-shadow:0 10px 30px rgba(0,0,0,.5),inset 0 1px 0 rgba(0,230,118,0.04) !important; }
+  .doctor-card:hover { border-color:#00E676 !important; box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 40px rgba(0,230,118,0.25),0 0 60px rgba(0,200,83,0.12) !important; }
+  .doctors-grid .doctor-card:nth-child(1){border-color:rgba(0,230,118,0.28) !important;}
+  .doctors-grid .doctor-card:nth-child(2){border-color:rgba(105,240,174,0.25) !important;}
+  .doctors-grid .doctor-card:nth-child(3){border-color:rgba(0,200,83,0.3) !important;}
+  .doctors-grid .doctor-card:nth-child(4){border-color:rgba(76,175,80,0.25) !important;}
+  .doctors-grid .doctor-card:nth-child(5){border-color:rgba(0,230,118,0.3) !important;}
+  .doctors-grid .doctor-card:nth-child(6){border-color:rgba(129,199,132,0.25) !important;}
+  .doctors-grid .doctor-card:nth-child(7){border-color:rgba(0,200,83,0.28) !important;}
+  .doctors-grid .doctor-card:nth-child(8){border-color:rgba(105,240,174,0.25) !important;}
+  .doc-spec { background:linear-gradient(90deg,#00E676,#69F0AE) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important; }
+  .avail-dot { background:#00E676 !important; box-shadow:0 0 10px #00E676 !important; }
+
+  /* APPOINTMENT */
+  .appt-wrap { background:linear-gradient(135deg,rgba(6,20,9,0.97),rgba(10,30,12,0.97)) !important; border:1px solid rgba(0,230,118,0.2) !important; box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 60px rgba(0,200,83,0.1),inset 0 1px 0 rgba(0,230,118,0.06) !important; }
+  .appt-wrap::before { background:linear-gradient(90deg,transparent,#00E676,#69F0AE,transparent) !important; }
+  .appt-title { background:linear-gradient(90deg,#00E676,#00C853,#69F0AE) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important; }
+  .step.active .step-circle,.step.done .step-circle { background:linear-gradient(135deg,#00E676,#00C853) !important; border-color:#00E676 !important; box-shadow:0 0 20px rgba(0,230,118,0.5) !important; }
+  .step.done .step-line,.step.active .step-line { background:linear-gradient(90deg,#00E676,#00C853) !important; }
+  .form-group input:focus,.form-group textarea:focus,.form-group select:focus { border-color:#00E676 !important; background:rgba(0,230,118,0.04) !important; box-shadow:0 0 20px rgba(0,230,118,0.12) !important; }
+  .appt-note { background:linear-gradient(135deg,rgba(0,230,118,0.07),rgba(0,200,83,0.04)) !important; border:1px solid rgba(0,230,118,0.18) !important; }
+  .note-text strong { color:#00E676 !important; }
+
+  /* CONTACT */
+  .cinfo-card:hover { background:linear-gradient(135deg,rgba(0,230,118,0.07),rgba(0,200,83,0.04)) !important; border-color:#00E676 !important; box-shadow:0 20px 40px rgba(0,0,0,.4),0 0 20px rgba(0,230,118,0.15) !important; }
+  .cinfo-icon { background:linear-gradient(135deg,#00E676,#00C853) !important; box-shadow:0 0 20px rgba(0,230,118,0.4) !important; }
+  .contact-form { background:linear-gradient(135deg,rgba(6,20,9,0.95),rgba(10,30,12,0.92)) !important; border:1px solid rgba(0,230,118,0.16) !important; box-shadow:0 20px 50px rgba(0,0,0,.5) !important; }
+
+  /* ABOUT */
+  .about-img-main { background:linear-gradient(135deg,#071A0D,#0B2D12) !important; border:1px solid rgba(0,230,118,0.18) !important; }
+  .about-badge { background:linear-gradient(135deg,#00E676,#00C853) !important; box-shadow:0 10px 30px rgba(0,230,118,0.4),0 0 40px rgba(0,200,83,0.25) !important; }
+  .about-feat { border:1px solid rgba(0,230,118,0.18) !important; }
+  .about-feat:nth-child(1){border-color:rgba(0,230,118,0.28) !important;}
+  .about-feat:nth-child(2){border-color:rgba(0,200,83,0.25) !important;}
+  .about-feat:nth-child(3){border-color:rgba(105,240,174,0.22) !important;}
+  .about-feat:nth-child(4){border-color:rgba(76,175,80,0.25) !important;}
+  .feat-icon { background:rgba(0,230,118,0.12) !important; border:1px solid rgba(0,230,118,0.2) !important; }
+
+  /* MODAL */
+  .modal { background:linear-gradient(135deg,#061409,#0A2010,#0B2D12) !important; border:1px solid rgba(0,230,118,0.35) !important; box-shadow:0 40px 80px rgba(0,0,0,.8),0 0 60px rgba(0,230,118,0.2) !important; }
+  .modal-tick { background:linear-gradient(135deg,#00E676,#00C853) !important; box-shadow:0 10px 30px rgba(0,230,118,0.5) !important; }
+  .notif-badge { background:rgba(0,230,118,0.1) !important; border-color:rgba(0,230,118,0.3) !important; color:#00E676 !important; }
+
+  /* HOSPITAL 3D GLOW */
+  .hospital-3d { filter:drop-shadow(0 30px 60px rgba(0,230,118,0.35)) drop-shadow(0 0 80px rgba(0,200,83,0.2)) !important; }
+  .float-card { background:linear-gradient(135deg,rgba(6,20,9,0.88),rgba(10,28,12,0.88)) !important; border:1px solid rgba(0,230,118,0.25) !important; box-shadow:0 10px 30px rgba(0,0,0,.4),0 0 20px rgba(0,230,118,0.1) !important; }
+
+  /* FOOTER */
+  footer { background:rgba(3,10,5,0.96) !important; border-top:1px solid rgba(0,230,118,0.14) !important; }
+  .footer-col h4 { background:linear-gradient(90deg,#00E676,#00C853) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important; }
+  .social-btn:hover { border-color:#00E676 !important; background:rgba(0,230,118,0.1) !important; box-shadow:0 0 15px rgba(0,230,118,0.3) !important; }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar-thumb { background:linear-gradient(#00E676,#00C853) !important; }
+  ::-webkit-scrollbar-track { background:#061409 !important; }
+
+  /* TOAST */
+  .toast { background:linear-gradient(135deg,#00C853,#00E676) !important; box-shadow:0 10px 30px rgba(0,230,118,0.45) !important; }
+
+  /* SECTION BACKGROUNDS */
+  #about { background:rgba(0,230,118,0.02) !important; }
+  #services { background:linear-gradient(180deg,rgba(0,200,83,0.06) 0%,transparent 100%) !important; }
+  #doctors { background:rgba(0,230,118,0.015) !important; }
+  #appointment { background:linear-gradient(180deg,rgba(0,230,118,0.05) 0%,rgba(0,200,83,0.025) 100%) !important; }
+  #contact { background:linear-gradient(180deg,rgba(0,200,83,0.05) 0%,transparent 100%) !important; }
+
+
+  /* Hospital scene wrapper */
+  .hospital-scene-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .hospital-3d {
+    width: 100%;
+    max-width: 580px;
+    filter: drop-shadow(0 20px 50px rgba(0,230,118,0.3))
+            drop-shadow(0 0 80px rgba(0,200,83,0.15)) !important;
+    animation: hospitalFloat 6s ease-in-out infinite;
+    border-radius: 20px;
+  }
+  @keyframes successPop {
+    from { transform: scale(0) rotate(-10deg); opacity:0; }
+    to   { transform: scale(1) rotate(0deg);  opacity:1; }
+  }
+  @keyframes hospitalFloat {
+    0%,100% { transform: translateY(0px) rotate(0deg); }
+    33%      { transform: translateY(-8px) rotate(.3deg); }
+    66%      { transform: translateY(-4px) rotate(-.2deg); }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Emergency Bar -->
+<div class="emergency-bar">🚨 24/7 Emergency: <a href="tel:+911800123456">+91 1800-123-456</a> &nbsp;|&nbsp; Ambulance: <a href="tel:+91108">108</a></div>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <div class="logo-icon">🏥</div>
+      <div class="logo-text">Medi<span>CurePlus</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#doctors">Doctors</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#appointment" class="nav-cta">📅 Book Appointment</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="toggleMenu()">🏠 Home</a>
+  <a href="#about" onclick="toggleMenu()">ℹ️ About</a>
+  <a href="#services" onclick="toggleMenu()">🩺 Services</a>
+  <a href="#doctors" onclick="toggleMenu()">👨‍⚕️ Doctors</a>
+  <a href="#contact" onclick="toggleMenu()">📞 Contact</a>
+  <a href="#appointment" onclick="toggleMenu()" style="color:var(--teal);font-weight:700;">📅 Book Appointment</a>
+</div>
+
+<!-- ═══════════════ HOME ═══════════════ -->
+<section id="home" style="padding:0;max-width:100%;margin:0;">
+  <div class="hero-bg">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="hero-orb orb3"></div>
+  </div>
+  <div class="hero-content" style="margin:0 auto;">
+    <div class="hero-left">
+      <div class="hero-badge">🏆 India's Top Ranked Hospital 2024</div>
+      <h1 class="hero-title">Advanced Care,<br><span>Compassionate</span><br>Healing.</h1>
+      <p class="hero-desc">MediCurePlus Hospital delivers world-class healthcare with cutting-edge technology, expert physicians, and a patient-first philosophy. Your health is our highest priority — 24/7, 365 days.</p>
+      <div class="hero-btns">
+        <a href="#appointment" class="btn-primary">📅 Book Appointment</a>
+        <a href="#services" class="btn-outline">🩺 Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Expert Doctors</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">50K+</div>
+          <div class="stat-label">Happy Patients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">25+</div>
+          <div class="stat-label">Specialities</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <!-- ══════════════════════════════════════════
+           GORGEOUS 3D HOSPITAL — full canvas SVG
+      ══════════════════════════════════════════ -->
+      <div class="hospital-scene-wrap">
+        <svg class="hospital-3d" viewBox="0 0 680 600" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Gradients -->
+            <linearGradient id="hSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#010A04"/>
+              <stop offset="50%"  stop-color="#031408"/>
+              <stop offset="100%" stop-color="#051C0A"/>
+            </linearGradient>
+            <linearGradient id="hGround" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#04160A"/>
+              <stop offset="100%" stop-color="#020A04"/>
+            </linearGradient>
+            <linearGradient id="hRoad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#030F07"/>
+              <stop offset="100%" stop-color="#010604"/>
+            </linearGradient>
+            <!-- Tower front face -->
+            <linearGradient id="hTower" x1="0" y1="0" x2="0.3" y2="1">
+              <stop offset="0%"   stop-color="#0D3018"/>
+              <stop offset="50%"  stop-color="#081E0F"/>
+              <stop offset="100%" stop-color="#051408"/>
+            </linearGradient>
+            <!-- Tower left side (dark 3D) -->
+            <linearGradient id="hTowerL" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="#010804"/>
+              <stop offset="100%" stop-color="#030E06"/>
+            </linearGradient>
+            <!-- Tower right side -->
+            <linearGradient id="hTowerR" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="#020A05"/>
+              <stop offset="100%" stop-color="#010603"/>
+            </linearGradient>
+            <!-- Wing front -->
+            <linearGradient id="hWing" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#0A2812"/>
+              <stop offset="100%" stop-color="#04110A"/>
+            </linearGradient>
+            <!-- Roof top face -->
+            <linearGradient id="hRoof" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"   stop-color="#00E676"/>
+              <stop offset="100%" stop-color="#00C853"/>
+            </linearGradient>
+            <!-- Podium / entrance -->
+            <linearGradient id="hPodium" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#0C2814"/>
+              <stop offset="100%" stop-color="#061208"/>
+            </linearGradient>
+            <!-- Window glow green -->
+            <radialGradient id="hWinG" cx="50%" cy="40%" r="60%">
+              <stop offset="0%"   stop-color="#B9F6CA"/>
+              <stop offset="50%"  stop-color="#00E676" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#00C853" stop-opacity=".3"/>
+            </radialGradient>
+            <!-- Window warm mint -->
+            <radialGradient id="hWinM" cx="50%" cy="40%" r="60%">
+              <stop offset="0%"   stop-color="#E8FFF2"/>
+              <stop offset="50%"  stop-color="#69F0AE" stop-opacity=".85"/>
+              <stop offset="100%" stop-color="#00E676" stop-opacity=".3"/>
+            </radialGradient>
+            <!-- Window off (some rooms dark) -->
+            <linearGradient id="hWinOff" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#041808" stop-opacity=".8"/>
+              <stop offset="100%" stop-color="#020C04" stop-opacity=".6"/>
+            </linearGradient>
+            <!-- Moon -->
+            <radialGradient id="hMoon" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#E8FFF2"/>
+              <stop offset="60%"  stop-color="#B9F6CA"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </radialGradient>
+            <!-- Spotlight cone -->
+            <linearGradient id="hSpot" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#00E676" stop-opacity=".25"/>
+              <stop offset="100%" stop-color="#00E676" stop-opacity="0"/>
+            </linearGradient>
+            <!-- Street lamp glow -->
+            <radialGradient id="hLamp" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#FFE082" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#FFE082" stop-opacity="0"/>
+            </radialGradient>
+
+            <!-- FILTERS -->
+            <filter id="hGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="4" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="hGlowSoft" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="10" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="hShadow">
+              <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity=".7"/>
+            </filter>
+            <filter id="hInnerGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="2" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+
+            <!-- Clip -->
+            <clipPath id="hClip"><rect width="680" height="600" rx="24"/></clipPath>
+          </defs>
+
+          <g clip-path="url(#hClip)">
+
+          <!-- ════ SKY ════ -->
+          <rect width="680" height="600" fill="url(#hSky)"/>
+
+          <!-- Stars -->
+          <circle cx="28"  cy="22"  r="1.4" fill="#fff" opacity=".55"/>
+          <circle cx="68"  cy="12"  r=".9"  fill="#fff" opacity=".4"/>
+          <circle cx="118" cy="35"  r="1.6" fill="#fff" opacity=".6"/>
+          <circle cx="178" cy="14"  r="1"   fill="#fff" opacity=".5"/>
+          <circle cx="245" cy="28"  r="1.2" fill="#fff" opacity=".55"/>
+          <circle cx="320" cy="16"  r=".8"  fill="#fff" opacity=".4"/>
+          <circle cx="395" cy="30"  r="1.5" fill="#00E676" opacity=".45" filter="url(#hGlow)"/>
+          <circle cx="460" cy="12"  r="1.1" fill="#fff" opacity=".5"/>
+          <circle cx="520" cy="38"  r="1.7" fill="#fff" opacity=".6"/>
+          <circle cx="590" cy="18"  r="1"   fill="#fff" opacity=".45"/>
+          <circle cx="650" cy="32"  r="1.3" fill="#fff" opacity=".5"/>
+          <circle cx="42"  cy="60"  r=".9"  fill="#69F0AE" opacity=".35"/>
+          <circle cx="148" cy="55"  r="1.1" fill="#fff" opacity=".3"/>
+          <circle cx="295" cy="50"  r=".8"  fill="#fff" opacity=".35"/>
+          <circle cx="510" cy="58"  r="1.3" fill="#fff" opacity=".3"/>
+          <circle cx="635" cy="48"  r=".9"  fill="#69F0AE" opacity=".3"/>
+
+          <!-- Moon -->
+          <circle cx="608" cy="72" r="38" fill="url(#hMoon)" opacity=".18" filter="url(#hGlowSoft)"/>
+          <circle cx="608" cy="72" r="26" fill="#051C0A"/>
+          <circle cx="596" cy="62" r="22" fill="#031408"/>
+          <!-- Craters -->
+          <circle cx="614" cy="78" r="5"   fill="#041608" opacity=".7"/>
+          <circle cx="600" cy="65" r="3"   fill="#041608" opacity=".6"/>
+          <circle cx="620" cy="62" r="2.5" fill="#041608" opacity=".5"/>
+
+          <!-- Distant skyline silhouette -->
+          <rect x="0"   y="335" width="68"  height="145" fill="#020A04" rx="2"/>
+          <rect x="15"  y="310" width="20"  height="170" fill="#020A04"/>
+          <rect x="42"  y="322" width="16"  height="158" fill="#030C06"/>
+          <rect x="605" y="330" width="75"  height="150" fill="#020A04" rx="2"/>
+          <rect x="618" y="308" width="22"  height="172" fill="#020A04"/>
+          <rect x="648" y="320" width="16"  height="160" fill="#030C06"/>
+          <!-- Distant windows tiny -->
+          <rect x="18"  y="328" width="6" height="6" fill="#00E676" opacity=".18" rx="1"/>
+          <rect x="28"  y="328" width="6" height="6" fill="#69F0AE" opacity=".12" rx="1"/>
+          <rect x="18"  y="342" width="6" height="6" fill="#00E676" opacity=".15" rx="1"/>
+          <rect x="620" cy="322" width="6" height="6" fill="#00E676" opacity=".18" rx="1"/>
+          <rect x="632" y="322" width="6" height="6" fill="#69F0AE" opacity=".12" rx="1"/>
+
+          <!-- ════ GROUND ════ -->
+          <rect x="0" y="498" width="680" height="102" fill="url(#hGround)"/>
+          <!-- Ground glow strip -->
+          <rect x="0" y="498" width="680" height="3" fill="#00E676" opacity=".3" filter="url(#hGlow)"/>
+
+          <!-- ════ ROAD ════ -->
+          <rect x="220" y="498" width="240" height="102" fill="url(#hRoad)"/>
+          <!-- Road markings -->
+          <rect x="337" y="502" width="6" height="25" fill="#FFE082" opacity=".55" rx="2"/>
+          <rect x="337" y="535" width="6" height="25" fill="#FFE082" opacity=".55" rx="2"/>
+          <rect x="337" y="568" width="6" height="25" fill="#FFE082" opacity=".55" rx="2"/>
+          <!-- Road edge lines -->
+          <rect x="220" y="498" width="3" height="102" fill="#00E676" opacity=".12"/>
+          <rect x="457" y="498" width="3" height="102" fill="#00E676" opacity=".12"/>
+
+          <!-- ════ LUSH TREES ════ -->
+          <!-- Left cluster -->
+          <rect x="46" y="445" width="11" height="58" fill="#020C04" rx="2"/>
+          <ellipse cx="52" cy="430" rx="26" ry="36" fill="#03180A"/>
+          <ellipse cx="52" cy="418" rx="20" ry="27" fill="#042A10"/>
+          <ellipse cx="52" cy="408" rx="14" ry="19" fill="#006428" filter="url(#hGlow)"/>
+          <ellipse cx="52" cy="400" rx="8"  ry="12" fill="#00A040" opacity=".6"/>
+
+          <rect x="86" y="455" width="9"  height="48" fill="#020C04" rx="2"/>
+          <ellipse cx="91" cy="442" rx="21" ry="29" fill="#03180A"/>
+          <ellipse cx="91" cy="432" rx="16" ry="21" fill="#042A10"/>
+          <ellipse cx="91" cy="424" rx="10" ry="14" fill="#006428" opacity=".8" filter="url(#hGlow)"/>
+
+          <rect x="118" y="460" width="8"  height="42" fill="#020C04" rx="2"/>
+          <ellipse cx="122" cy="448" rx="18" ry="25" fill="#03180A"/>
+          <ellipse cx="122" cy="440" rx="13" ry="18" fill="#042A10"/>
+          <ellipse cx="122" cy="433" rx="8"  ry="12" fill="#006428" opacity=".7"/>
+
+          <!-- Right cluster -->
+          <rect x="620" y="445" width="11" height="58" fill="#020C04" rx="2"/>
+          <ellipse cx="626" cy="430" rx="26" ry="36" fill="#03180A"/>
+          <ellipse cx="626" cy="418" rx="20" ry="27" fill="#042A10"/>
+          <ellipse cx="626" cy="408" rx="14" ry="19" fill="#006428" filter="url(#hGlow)"/>
+          <ellipse cx="626" cy="400" rx="8"  ry="12" fill="#00A040" opacity=".6"/>
+
+          <rect x="584" y="455" width="9"  height="48" fill="#020C04" rx="2"/>
+          <ellipse cx="589" cy="442" rx="21" ry="29" fill="#03180A"/>
+          <ellipse cx="589" cy="432" rx="16" ry="21" fill="#042A10"/>
+          <ellipse cx="589" cy="424" rx="10" ry="14" fill="#006428" opacity=".8" filter="url(#hGlow)"/>
+
+          <rect x="551" y="460" width="8"  height="42" fill="#020C04" rx="2"/>
+          <ellipse cx="555" cy="448" rx="18" ry="25" fill="#03180A"/>
+          <ellipse cx="555" cy="440" rx="13" ry="18" fill="#042A10"/>
+          <ellipse cx="555" cy="433" rx="8"  ry="12" fill="#006428" opacity=".7"/>
+
+          <!-- Hedge row -->
+          <rect x="148" y="490" width="72" height="14" fill="#03200A" rx="7"/>
+          <rect x="460" y="490" width="72" height="14" fill="#03200A" rx="7"/>
+          <!-- Hedge flowers -->
+          <circle cx="156" cy="489" r="3" fill="#00E676" opacity=".7" filter="url(#hGlow)"/>
+          <circle cx="168" cy="487" r="2.5" fill="#69F0AE" opacity=".8"/>
+          <circle cx="180" cy="489" r="3"   fill="#00E676" opacity=".65"/>
+          <circle cx="192" cy="488" r="2"   fill="#B9F6CA" opacity=".7"/>
+          <circle cx="204" cy="489" r="2.5" fill="#00E676" opacity=".6"/>
+          <circle cx="468" cy="489" r="3"   fill="#00E676" opacity=".7" filter="url(#hGlow)"/>
+          <circle cx="480" cy="487" r="2.5" fill="#69F0AE" opacity=".8"/>
+          <circle cx="492" cy="489" r="3"   fill="#00E676" opacity=".65"/>
+          <circle cx="504" cy="488" r="2"   fill="#B9F6CA" opacity=".7"/>
+          <circle cx="516" cy="489" r="2.5" fill="#00E676" opacity=".6"/>
+
+          <!-- Building ground shadow -->
+          <ellipse cx="340" cy="506" rx="240" ry="18" fill="#000" opacity=".55"/>
+
+          <!-- ════ STREET LAMPS ════ -->
+          <!-- Left lamp -->
+          <rect x="183" y="415" width="4" height="88" fill="#042008" rx="2"/>
+          <path d="M185,415 Q175,400 162,398" fill="none" stroke="#042008" stroke-width="3"/>
+          <circle cx="162" cy="397" r="7" fill="url(#hLamp)" opacity=".8" filter="url(#hGlowSoft)"/>
+          <circle cx="162" cy="397" r="3" fill="#FFE082"/>
+          <!-- Right lamp -->
+          <rect x="493" y="415" width="4" height="88" fill="#042008" rx="2"/>
+          <path d="M495,415 Q505,400 518,398" fill="none" stroke="#042008" stroke-width="3"/>
+          <circle cx="518" cy="397" r="7" fill="url(#hLamp)" opacity=".8" filter="url(#hGlowSoft)"/>
+          <circle cx="518" cy="397" r="3" fill="#FFE082"/>
+          <!-- Lamp light cones on ground -->
+          <polygon points="155,404 169,404 195,500 136,500" fill="#FFE082" opacity=".04"/>
+          <polygon points="511,404 525,404 551,500 492,500" fill="#FFE082" opacity=".04"/>
+
+          <!-- ════════════════════════════════════════════
+               LEFT WING — full 3-face isometric
+          ════════════════════════════════════════════ -->
+          <!-- Left side face (darkest) -->
+          <polygon points="80,295 118,268 118,498 80,500" fill="url(#hTowerL)"/>
+          <!-- Front face -->
+          <rect x="118" y="268" width="148" height="230" fill="url(#hWing)" rx="2"/>
+          <!-- Top face -->
+          <polygon points="80,295 118,268 266,268 228,295" fill="url(#hRoof)" opacity=".75"/>
+          <!-- Roof accent line -->
+          <line x1="118" y1="266" x2="266" y2="266" stroke="#00E676" stroke-width="3.5" opacity=".95" filter="url(#hGlow)"/>
+          <polygon points="80,293 118,266 266,266 228,293" fill="#00E676" opacity=".25"/>
+          <!-- Parapet details -->
+          <rect x="118" y="264" width="148" height="5" fill="#00E676" opacity=".5" rx="1"/>
+
+          <!-- Left Wing Windows — 5 rows × 4 cols -->
+          <!-- Row 1 -->
+          <rect x="128" y="280" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".8"  filter="url(#hGlow)"/>
+          <rect x="159" y="280" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".6"/>
+          <rect x="190" y="280" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".75" filter="url(#hGlow)"/>
+          <rect x="221" y="280" width="24" height="32" fill="url(#hWinOff)" rx="3" opacity=".9"/>
+          <!-- Row 2 -->
+          <rect x="128" y="322" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".55"/>
+          <rect x="159" y="322" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".8"  filter="url(#hGlow)"/>
+          <rect x="190" y="322" width="24" height="32" fill="url(#hWinOff)" rx="3" opacity=".85"/>
+          <rect x="221" y="322" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".7"/>
+          <!-- Row 3 -->
+          <rect x="128" y="364" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".7"/>
+          <rect x="159" y="364" width="24" height="32" fill="url(#hWinOff)" rx="3" opacity=".9"/>
+          <rect x="190" y="364" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".65"/>
+          <rect x="221" y="364" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".75" filter="url(#hGlow)"/>
+          <!-- Row 4 -->
+          <rect x="128" y="406" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".5"/>
+          <rect x="159" y="406" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".7"/>
+          <rect x="190" y="406" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".8"  filter="url(#hGlow)"/>
+          <rect x="221" y="406" width="24" height="32" fill="url(#hWinOff)" rx="3" opacity=".85"/>
+          <!-- Row 5 -->
+          <rect x="128" y="448" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".65"/>
+          <rect x="159" y="448" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".5"/>
+          <rect x="190" y="448" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".6"/>
+          <rect x="221" y="448" width="24" height="32" fill="url(#hWinOff)" rx="3" opacity=".8"/>
+          <!-- Window light beams left -->
+          <polygon points="128,312 152,312 158,360 122,360" fill="#00E676" opacity=".025"/>
+          <polygon points="190,312 214,312 220,360 184,360" fill="#69F0AE" opacity=".02"/>
+
+          <!-- ════════════════════════════════════════════
+               RIGHT WING — 3D
+          ════════════════════════════════════════════ -->
+          <!-- Front face -->
+          <rect x="414" y="268" width="148" height="230" fill="url(#hWing)" rx="2"/>
+          <!-- Right side face (darkest) -->
+          <polygon points="562,268 600,295 600,500 562,498" fill="url(#hTowerR)"/>
+          <!-- Top face -->
+          <polygon points="414,268 562,268 600,295 452,295" fill="url(#hRoof)" opacity=".75"/>
+          <!-- Roof lines -->
+          <line x1="414" y1="266" x2="562" y2="266" stroke="#00E676" stroke-width="3.5" opacity=".95" filter="url(#hGlow)"/>
+          <rect x="414" y="264" width="148" height="5" fill="#00E676" opacity=".5" rx="1"/>
+
+          <!-- Right Wing Windows -->
+          <rect x="424" y="280" width="24" height="32" fill="url(#hWinOff)" rx="3" opacity=".85"/>
+          <rect x="455" y="280" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".8"  filter="url(#hGlow)"/>
+          <rect x="486" y="280" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".6"/>
+          <rect x="517" y="280" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".75"/>
+          <rect x="424" y="322" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".7"/>
+          <rect x="455" y="322" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".55"/>
+          <rect x="486" y="322" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".8"  filter="url(#hGlow)"/>
+          <rect x="517" y="322" width="24" height="32" fill="url(#hWinOff)" rx="3" opacity=".85"/>
+          <rect x="424" y="364" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".6"/>
+          <rect x="455" y="364" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".75"/>
+          <rect x="486" y="364" width="24" height="32" fill="url(#hWinOff)" rx="3" opacity=".8"/>
+          <rect x="517" y="364" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".5"/>
+          <rect x="424" y="406" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".8"  filter="url(#hGlow)"/>
+          <rect x="455" y="406" width="24" height="32" fill="url(#hWinOff)" rx="3" opacity=".85"/>
+          <rect x="486" y="406" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".55"/>
+          <rect x="517" y="406" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".7"/>
+          <rect x="424" y="448" width="24" height="32" fill="url(#hWinOff)" rx="3" opacity=".8"/>
+          <rect x="455" y="448" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".65"/>
+          <rect x="486" y="448" width="24" height="32" fill="url(#hWinM)"   rx="3" opacity=".5"/>
+          <rect x="517" y="448" width="24" height="32" fill="url(#hWinG)"   rx="3" opacity=".7"/>
+
+          <!-- ════════════════════════════════════════════
+               CENTRAL TOWER — 3 full faces + top
+          ════════════════════════════════════════════ -->
+          <!-- Left side face (darkest 3D depth) -->
+          <polygon points="218,110 262,80 262,498 218,498" fill="url(#hTowerL)" filter="url(#hShadow)"/>
+          <!-- Front face (lit) -->
+          <rect x="262" y="80" width="244" height="418" fill="url(#hTower)" rx="2"/>
+          <!-- Right side face -->
+          <polygon points="506,80 550,110 550,498 506,498" fill="url(#hTowerR)"/>
+          <!-- Top face -->
+          <polygon points="218,110 262,80 506,80 550,110" fill="url(#hRoof)"/>
+
+          <!-- Tower roof detail edges -->
+          <line x1="262" y1="78" x2="506" y2="78" stroke="#00E676" stroke-width="4" opacity=".95" filter="url(#hGlow)"/>
+          <line x1="218" y1="110" x2="262" y2="78" stroke="#00C853" stroke-width="2.5" opacity=".8"/>
+          <line x1="550" y1="110" x2="506" y2="78" stroke="#00C853" stroke-width="2.5" opacity=".8"/>
+          <!-- Parapet / ledge -->
+          <rect x="262" y="75" width="244" height="8" fill="#00E676" opacity=".6" rx="1"/>
+          <!-- Vertical corner lines -->
+          <line x1="262" y1="80" x2="262" y2="498" stroke="#00E676" stroke-width="1.5" opacity=".15"/>
+          <line x1="506" y1="80" x2="506" y2="498" stroke="#00E676" stroke-width="1.5" opacity=".1"/>
+          <!-- Floor band lines (horizontal) -->
+          <line x1="262" y1="150" x2="506" y2="150" stroke="#00E676" stroke-width=".8" opacity=".08"/>
+          <line x1="262" y1="215" x2="506" y2="215" stroke="#00E676" stroke-width=".8" opacity=".08"/>
+          <line x1="262" y1="280" x2="506" y2="280" stroke="#00E676" stroke-width=".8" opacity=".08"/>
+          <line x1="262" y1="345" x2="506" y2="345" stroke="#00E676" stroke-width=".8" opacity=".08"/>
+          <line x1="262" y1="410" x2="506" y2="410" stroke="#00E676" stroke-width=".8" opacity=".08"/>
+
+          <!-- TOWER WINDOWS — 6 rows × 5 cols -->
+          <!-- Row 1 -->
+          <rect x="274" y="94"  width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".85" filter="url(#hGlow)"/>
+          <rect x="318" y="94"  width="34" height="44" fill="url(#hWinM)"   rx="4" opacity=".65"/>
+          <rect x="362" y="94"  width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".9"  filter="url(#hGlow)"/>
+          <rect x="406" y="94"  width="34" height="44" fill="url(#hWinM)"   rx="4" opacity=".6"/>
+          <rect x="450" y="94"  width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".8"  filter="url(#hGlow)"/>
+          <!-- Row 2 -->
+          <rect x="274" y="153" width="34" height="44" fill="url(#hWinM)"   rx="4" opacity=".6"/>
+          <rect x="318" y="153" width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".85" filter="url(#hGlow)"/>
+          <rect x="362" y="153" width="34" height="44" fill="url(#hWinOff)" rx="4" opacity=".9"/>
+          <rect x="406" y="153" width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".8"  filter="url(#hGlow)"/>
+          <rect x="450" y="153" width="34" height="44" fill="url(#hWinM)"   rx="4" opacity=".55"/>
+          <!-- Row 3 -->
+          <rect x="274" y="222" width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".8"  filter="url(#hGlow)"/>
+          <rect x="318" y="222" width="34" height="44" fill="url(#hWinOff)" rx="4" opacity=".9"/>
+          <rect x="362" y="222" width="34" height="44" fill="url(#hWinM)"   rx="4" opacity=".6"/>
+          <rect x="406" y="222" width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".85" filter="url(#hGlow)"/>
+          <rect x="450" y="222" width="34" height="44" fill="url(#hWinOff)" rx="4" opacity=".85"/>
+          <!-- Row 4 -->
+          <rect x="274" y="291" width="34" height="44" fill="url(#hWinOff)" rx="4" opacity=".85"/>
+          <rect x="318" y="291" width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".8"  filter="url(#hGlow)"/>
+          <rect x="362" y="291" width="34" height="44" fill="url(#hWinM)"   rx="4" opacity=".65"/>
+          <rect x="406" y="291" width="34" height="44" fill="url(#hWinOff)" rx="4" opacity=".9"/>
+          <rect x="450" y="291" width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".75"/>
+          <!-- Row 5 -->
+          <rect x="274" y="360" width="34" height="44" fill="url(#hWinM)"   rx="4" opacity=".6"/>
+          <rect x="318" y="360" width="34" height="44" fill="url(#hWinOff)" rx="4" opacity=".85"/>
+          <rect x="362" y="360" width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".85" filter="url(#hGlow)"/>
+          <rect x="406" y="360" width="34" height="44" fill="url(#hWinM)"   rx="4" opacity=".55"/>
+          <rect x="450" y="360" width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".8"  filter="url(#hGlow)"/>
+          <!-- Row 6 -->
+          <rect x="274" y="429" width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".75"/>
+          <rect x="318" y="429" width="34" height="44" fill="url(#hWinM)"   rx="4" opacity=".55"/>
+          <rect x="362" y="429" width="34" height="44" fill="url(#hWinOff)" rx="4" opacity=".8"/>
+          <rect x="406" y="429" width="34" height="44" fill="url(#hWinG)"   rx="4" opacity=".8"  filter="url(#hGlow)"/>
+          <rect x="450" y="429" width="34" height="44" fill="url(#hWinM)"   rx="4" opacity=".5"/>
+
+          <!-- Window light projection (subtle) -->
+          <polygon points="274,138 308,138 316,180 266,180" fill="#00E676" opacity=".025"/>
+          <polygon points="362,138 396,138 404,180 354,180" fill="#00E676" opacity=".03"/>
+          <polygon points="318,207 352,207 358,248 312,248" fill="#69F0AE" opacity=".02"/>
+
+          <!-- ════ ENTRANCE / PORTICO ════ -->
+          <!-- Portico platform -->
+          <rect x="270" y="478" width="228" height="22" fill="#04160A" rx="2"/>
+          <!-- Platform top green strip -->
+          <rect x="270" y="477" width="228" height="4" fill="#00E676" opacity=".5"/>
+          <!-- Platform 3D side -->
+          <polygon points="270,500 250,508 250,530 270,522" fill="#020C04"/>
+          <polygon points="498,500 518,508 518,530 498,522" fill="#020C04"/>
+
+          <!-- Left column -->
+          <rect x="278" y="418" width="18" height="62" fill="#061E0C" rx="2"/>
+          <polygon points="274,418 278,412 296,412 300,418" fill="#00E676" opacity=".55"/>
+          <!-- Right column -->
+          <rect x="472" y="418" width="18" height="62" fill="#061E0C" rx="2"/>
+          <polygon points="468,418 472,412 490,412 494,418" fill="#00E676" opacity=".55"/>
+          <!-- Portico beam -->
+          <rect x="278" y="412" width="212" height="10" fill="#072410" rx="2"/>
+          <rect x="274" y="408" width="220" height="6"  fill="#00E676" opacity=".65" rx="1"/>
+          <!-- Portico roof -->
+          <polygon points="270,408 292,390 476,390 498,408" fill="#00E676" opacity=".3"/>
+          <rect x="292" y="387" width="184" height="6" fill="#00E676" opacity=".85" rx="1" filter="url(#hGlow)"/>
+          <!-- Portico fascia -->
+          <rect x="292" y="387" width="184" height="5" fill="#00E676" opacity=".4" rx="1"/>
+
+          <!-- Entrance doors left pair -->
+          <rect x="294" y="418" width="52" height="80" fill="#00E676" rx="3" opacity=".1"/>
+          <rect x="296" y="420" width="48" height="76" fill="#00E676" rx="2" opacity=".07"/>
+          <line x1="320" y1="418" x2="320" y2="498" stroke="#00E676" stroke-width="1.5" opacity=".25"/>
+          <!-- Door handles -->
+          <circle cx="312" cy="460" r="3.5" fill="#00E676" opacity=".55"/>
+          <circle cx="328" cy="460" r="3.5" fill="#00E676" opacity=".55"/>
+          <!-- Entrance doors right pair -->
+          <rect x="422" y="418" width="52" height="80" fill="#00E676" rx="3" opacity=".1"/>
+          <rect x="424" y="420" width="48" height="76" fill="#00E676" rx="2" opacity=".07"/>
+          <line x1="448" y1="418" x2="448" y2="498" stroke="#00E676" stroke-width="1.5" opacity=".25"/>
+          <circle cx="440" cy="460" r="3.5" fill="#00E676" opacity=".55"/>
+          <circle cx="456" cy="460" r="3.5" fill="#00E676" opacity=".55"/>
+          <!-- Door frame glow lines -->
+          <rect x="294" y="418" width="3" height="80" fill="#00E676" opacity=".3"/>
+          <rect x="343" y="418" width="3" height="80" fill="#00E676" opacity=".3"/>
+          <rect x="422" y="418" width="3" height="80" fill="#00E676" opacity=".3"/>
+          <rect x="471" y="418" width="3" height="80" fill="#00E676" opacity=".3"/>
+
+          <!-- ════ ROOFTOP FEATURES ════ -->
+          <!-- Helipad -->
+          <circle cx="350" cy="56" r="32" fill="none" stroke="#00E676" stroke-width="3" opacity=".65" filter="url(#hGlow)"/>
+          <circle cx="350" cy="56" r="22" fill="#00E676" opacity=".06"/>
+          <circle cx="350" cy="56" r="14" fill="none" stroke="#00E676" stroke-width="1.5" opacity=".4"/>
+          <line x1="318" y1="56" x2="382" y2="56" stroke="#00E676" stroke-width="1.5" opacity=".45"/>
+          <line x1="350" y1="24" x2="350" y2="88" stroke="#00E676" stroke-width="1.5" opacity=".45"/>
+          <text x="350" y="63" text-anchor="middle" fill="#00E676" font-size="18" font-weight="900" font-family="Arial Black,Arial" opacity=".85" filter="url(#hGlow)">H</text>
+
+          <!-- Red Medical Cross -->
+          <rect x="450" y="46" width="46" height="14" fill="#FF4444" rx="4" filter="url(#hGlow)"/>
+          <rect x="464" y="32" width="14" height="42" fill="#FF4444" rx="4" filter="url(#hGlow)"/>
+          <!-- Cross inner bright -->
+          <rect x="452" y="48" width="42" height="10" fill="#FF7777" rx="3" opacity=".5"/>
+          <rect x="466" y="34" width="10" height="38" fill="#FF7777" rx="3" opacity=".5"/>
+
+          <!-- Flagpole -->
+          <line x1="286" y1="80" x2="286" y2="34" stroke="#aaa" stroke-width="2.5"/>
+          <rect x="286" y="34" width="42" height="24" fill="#00E676" opacity=".92" rx="4" filter="url(#hGlow)"/>
+          <text x="307" y="50" text-anchor="middle" fill="#020A04" font-size="9" font-weight="900" font-family="Arial">MCP+</text>
+          <!-- Flag waving effect -->
+          <path d="M328,34 Q338,42 328,50" fill="#00C853" opacity=".5"/>
+
+          <!-- Rooftop AC units -->
+          <rect x="395" y="84" width="32" height="14" fill="#051808" rx="3"/>
+          <rect x="435" y="84" width="26" height="14" fill="#051808" rx="3"/>
+          <rect x="395" y="81" width="32" height="5"  fill="#00E676" opacity=".4" rx="1"/>
+          <rect x="435" y="81" width="26" height="5"  fill="#00E676" opacity=".4" rx="1"/>
+          <!-- AC vents -->
+          <line x1="398" y1="87" x2="398" y2="95" stroke="#00E676" stroke-width="1" opacity=".3"/>
+          <line x1="404" y1="87" x2="404" y2="95" stroke="#00E676" stroke-width="1" opacity=".3"/>
+          <line x1="410" y1="87" x2="410" y2="95" stroke="#00E676" stroke-width="1" opacity=".3"/>
+
+          <!-- Rooftop water tank -->
+          <ellipse cx="268" cy="74" rx="20" ry="8" fill="#041408"/>
+          <rect x="248" y="68" width="40" height="20" fill="#041808" rx="3"/>
+          <ellipse cx="268" cy="68" rx="20" ry="8" fill="#062010"/>
+          <rect x="262" y="60" width="4" height="10" fill="#042008" rx="1"/>
+
+          <!-- Spotlight beams from roof corners -->
+          <polygon points="264,80 278,80 320,200 240,200" fill="url(#hSpot)" opacity=".6"/>
+          <polygon points="500,80 516,80 560,200 480,200" fill="url(#hSpot)" opacity=".6"/>
+
+          <!-- ════ HOSPITAL NAME SIGN ════ -->
+          <rect x="280" y="402" width="208" height="22" fill="#010804" opacity=".8" rx="3"/>
+          <rect x="281" y="403" width="206" height="20" fill="#021008" rx="2"/>
+          <text x="384" y="417.5" text-anchor="middle" fill="#00E676" font-size="9.5" font-weight="bold" font-family="Arial" letter-spacing="1.8" filter="url(#hGlow)">MEDICUREPLUS HOSPITAL</text>
+          <!-- Sign glow border -->
+          <rect x="280" y="402" width="208" height="22" fill="none" stroke="#00E676" stroke-width=".8" rx="3" opacity=".4"/>
+
+          <!-- ════ AMBULANCE ════ -->
+          <rect x="226" y="508" width="84" height="30" fill="#fff" rx="6" filter="url(#hShadow)"/>
+          <!-- Cabin section -->
+          <rect x="292" y="510" width="22" height="26" fill="#eee" rx="3"/>
+          <!-- Windshield -->
+          <rect x="293" y="512" width="20" height="14" fill="#B2DFDB" opacity=".6" rx="2"/>
+          <!-- Wheels -->
+          <circle cx="242" cy="540" r="8" fill="#111"/>
+          <circle cx="242" cy="540" r="5" fill="#2a2a2a"/>
+          <circle cx="242" cy="540" r="2" fill="#444"/>
+          <circle cx="298" cy="540" r="8" fill="#111"/>
+          <circle cx="298" cy="540" r="5" fill="#2a2a2a"/>
+          <circle cx="298" cy="540" r="2" fill="#444"/>
+          <!-- Red cross on ambulance -->
+          <rect x="238" y="515" width="18" height="6"  fill="#FF4444" rx="1.5"/>
+          <rect x="244" y="509" width="6"  height="18" fill="#FF4444" rx="1.5"/>
+          <!-- Blue stripe -->
+          <rect x="226" y="524" width="84" height="5" fill="#1565C0" opacity=".6"/>
+          <!-- Siren lights -->
+          <circle cx="314" cy="507" r="5" fill="#FF4444" opacity=".85" filter="url(#hGlow)"/>
+          <circle cx="300" cy="507" r="5" fill="#00E676" opacity=".85" filter="url(#hGlow)"/>
+          <!-- Ambulance text -->
+          <text x="260" y="522" fill="#FF4444" font-size="6" font-weight="bold" font-family="Arial" text-anchor="middle">AMBULANCE</text>
+          <!-- Ground glow under ambulance -->
+          <ellipse cx="268" cy="542" rx="52" ry="7" fill="#00E676" opacity=".07"/>
+
+          <!-- Path/driveway markings -->
+          <rect x="226" y="498" width="3" height="50" fill="#FFE082" opacity=".3" rx="1"/>
+          <rect x="311" y="498" width="3" height="50" fill="#FFE082" opacity=".3" rx="1"/>
+
+          <!-- Emergency signpost -->
+          <rect x="500" y="455" width="4"  height="48" fill="#042008" rx="1"/>
+          <rect x="494" y="443" width="62" height="20" fill="#042008" rx="3"/>
+          <rect x="495" y="444" width="60" height="18" fill="#063010" rx="2"/>
+          <text x="525" y="456.5" text-anchor="middle" fill="#00E676" font-size="7.5" font-weight="bold" font-family="Arial">EMERGENCY ➜</text>
+
+          <!-- Ground ambient glow from building windows -->
+          <ellipse cx="384" cy="502" rx="200" ry="14" fill="#00E676" opacity=".04" filter="url(#hGlowSoft)"/>
+
+          <!-- Corner decorative dots -->
+          <circle cx="102" cy="220" r="3" fill="#00E676" opacity=".3"/>
+          <circle cx="578" cy="280" r="3" fill="#00E676" opacity=".28"/>
+          <circle cx="82"  cy="370" r="2" fill="#69F0AE" opacity=".22"/>
+          <circle cx="600" cy="390" r="2" fill="#69F0AE" opacity=".22"/>
+
+          </g>
+        </svg>
+
+        <!-- Floating info cards -->
+        <div class="float-card fc1">
+          <div class="fc-icon green">💊</div>
+          <div class="fc-info">
+            <div class="fc-val">Pharmacy 24/7</div>
+            <div class="fc-key">All Medicines Available</div>
+          </div>
+        </div>
+        <div class="float-card fc2">
+          <div class="fc-icon blue">🫀</div>
+          <div class="fc-info">
+            <div class="fc-val">98.7% Success</div>
+            <div class="fc-key">Cardiac Surgeries</div>
+          </div>
+        </div>
+        <div class="float-card fc3">
+          <div class="fc-icon red">🚑</div>
+          <div class="fc-info">
+            <div class="fc-val">3 Min Response</div>
+            <div class="fc-key">Emergency Services</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about">
+  <div class="section-tag">About Us</div>
+  <div class="about-grid">
+    <div class="about-img-wrap fade-up">
+      <div class="about-img-main">
+        <svg viewBox="0 0 420 320" width="100%" style="padding:20px;">
+          <defs>
+            <linearGradient id="hallGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0D1535"/>
+              <stop offset="100%" stop-color="#0A1E12"/>
+            </linearGradient>
+          </defs>
+          <rect width="420" height="320" fill="url(#hallGrad)" rx="12"/>
+          <!-- Hospital corridor 3D -->
+          <rect x="60" y="40" width="300" height="240" fill="#0A1428" rx="4"/>
+          <!-- Floor perspective -->
+          <polygon points="60,280 210,180 360,280" fill="#0D1535" opacity=".8"/>
+          <!-- Ceiling -->
+          <polygon points="60,40 210,100 360,40" fill="#12153A"/>
+          <!-- Left wall -->
+          <polygon points="60,40 60,280 210,180 210,100" fill="#0F1535"/>
+          <!-- Right wall -->
+          <polygon points="360,40 360,280 210,180 210,100" fill="#0C1535"/>
+          <!-- Floor tiles -->
+          <line x1="60" y1="280" x2="360" y2="280" stroke="#00F5A0" stroke-width=".5" opacity=".2"/>
+          <line x1="110" y1="260" x2="310" y2="260" stroke="#00F5A0" stroke-width=".5" opacity=".15"/>
+          <line x1="150" y1="240" x2="280" y2="240" stroke="#00F5A0" stroke-width=".5" opacity=".1"/>
+          <!-- Reception desk -->
+          <rect x="150" y="190" width="120" height="50" fill="#1A1040" rx="4"/>
+          <rect x="150" y="185" width="120" height="8" fill="#00F5A0" rx="2" opacity=".8"/>
+          <!-- Monitor on desk -->
+          <rect x="195" y="168" width="30" height="22" fill="#001810" rx="2" stroke="#00F5A0" stroke-width=".5"/>
+          <rect x="197" y="170" width="26" height="18" fill="#001008" rx="1"/>
+          <rect x="208" y="188" width="4" height="4" fill="#00F5A0" opacity=".6"/>
+          <!-- Lights on ceiling -->
+          <ellipse cx="210" cy="108" rx="8" ry="4" fill="#FFD700" opacity=".6"/>
+          <ellipse cx="160" cy="90" rx="6" ry="3" fill="#FFD700" opacity=".4"/>
+          <ellipse cx="260" cy="90" rx="6" ry="3" fill="#FFD700" opacity=".4"/>
+          <!-- Light rays -->
+          <line x1="210" y1="108" x2="190" y2="240" stroke="#FFD700" stroke-width="1" opacity=".05"/>
+          <line x1="210" y1="108" x2="230" y2="240" stroke="#FFD700" stroke-width="1" opacity=".05"/>
+          <!-- Staff silhouettes -->
+          <ellipse cx="170" cy="196" rx="8" ry="8" fill="#1A1040"/>
+          <rect x="163" y="202" width="14" height="24" fill="#1A1040" rx="3"/>
+          <ellipse cx="240" cy="192" rx="7" ry="7" fill="#1A1040"/>
+          <rect x="234" y="198" width="12" height="22" fill="#1A1040" rx="3"/>
+          <!-- Wall signs -->
+          <rect x="72" y="120" width="50" height="20" fill="#0D1535" rx="3" stroke="#00F5A0" stroke-width=".5"/>
+          <text x="97" y="133" fill="#00F5A0" font-size="7" text-anchor="middle" font-weight="bold">EMERGENCY</text>
+          <rect x="72" y="150" width="50" height="20" fill="#0D1535" rx="3" stroke="#00F5A0" stroke-width=".5"/>
+          <text x="97" y="163" fill="#A7F3D0" font-size="7" text-anchor="middle">PHARMACY ➜</text>
+          <!-- Red cross on wall -->
+          <rect x="290" y="118" width="22" height="6" fill="#FF6B6B" rx="1"/>
+          <rect x="295" y="113" width="6" height="16" fill="#FF6B6B" rx="1"/>
+        </svg>
+      </div>
+      <div class="about-badge">
+        <strong>25+</strong>
+        <span>Years of Excellence</span>
+      </div>
+    </div>
+    <div class="fade-up" style="animation-delay:.2s">
+      <div class="section-tag">Our Story</div>
+      <h2 class="section-title">Trusted <span>Healthcare</span> Since 1999</h2>
+      <p class="section-desc" style="margin-bottom:24px;">MediCurePlus Hospital was founded with a single vision: to bring world-class medical care to every patient, regardless of their background. Over 25 years, we've grown into one of India's most trusted multi-specialty hospitals, combining advanced technology with genuine human compassion.</p>
+      <p class="section-desc" style="margin-bottom:32px;">Accredited by NABH & JCI, our 800-bed facility in the heart of Andhra Pradesh serves over 2 lakh patients annually, with centres of excellence in Cardiology, Oncology, Neurology, and more.</p>
+      <div class="about-features">
+        <div class="about-feat">
+          <div class="feat-icon">🏅</div>
+          <div class="feat-text"><strong>NABH Accredited</strong><p>Highest quality standards in Indian healthcare</p></div>
+        </div>
+        <div class="about-feat">
+          <div class="feat-icon">🤖</div>
+          <div class="feat-text"><strong>AI-Powered Diagnostics</strong><p>Latest MRI, CT & robotic surgery systems</p></div>
+        </div>
+        <div class="about-feat">
+          <div class="feat-icon">🌙</div>
+          <div class="feat-text"><strong>24/7 Emergency</strong><p>Round-the-clock critical care unit</p></div>
+        </div>
+        <div class="about-feat">
+          <div class="feat-icon">🚁</div>
+          <div class="feat-text"><strong>Air Ambulance</strong><p>Helipad & air evacuation services</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section id="services">
+  <div style="text-align:center;margin-bottom:0;">
+    <div class="section-tag">Our Services</div>
+    <h2 class="section-title">Comprehensive <span>Medical</span> Care</h2>
+    <p class="section-desc" style="margin:0 auto;">From preventive care to complex surgeries, we offer a complete spectrum of healthcare services under one roof.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="svc-icon">🫀</div>
+      <h3>Cardiology & Cardiac Surgery</h3>
+      <p>Full-spectrum cardiac care including angioplasty, bypass surgery, valve replacement, and cardiac catheterization. Our CATH lab operates 24/7 for heart emergencies.</p>
+      <span class="svc-tag">NABH Certified Centre</span>
+    </div>
+    <div class="service-card fade-up" style="animation-delay:.1s">
+      <div class="svc-icon">🧠</div>
+      <h3>Neurology & Neurosurgery</h3>
+      <p>Expert treatment for brain tumors, epilepsy, stroke, Parkinson's disease, spinal disorders, and complex neurological conditions using robotic-assisted precision surgery.</p>
+      <span class="svc-tag">3T MRI Available</span>
+    </div>
+    <div class="service-card fade-up" style="animation-delay:.2s">
+      <div class="svc-icon">🦴</div>
+      <h3>Orthopaedics & Joint Care</h3>
+      <p>Joint replacement (knee, hip, shoulder), arthroscopy, spine surgery, fracture care, sports injuries, and advanced physiotherapy & rehabilitation programs.</p>
+      <span class="svc-tag">Robotic Surgery</span>
+    </div>
+    <div class="service-card fade-up" style="animation-delay:.3s">
+      <div class="svc-icon">🎗️</div>
+      <h3>Oncology & Cancer Care</h3>
+      <p>Comprehensive cancer treatment including chemotherapy, radiation therapy, immunotherapy, targeted therapy, and precision oncology. Bone marrow transplant unit available.</p>
+      <span class="svc-tag">Linac Radiotherapy</span>
+    </div>
+    <div class="service-card fade-up" style="animation-delay:.4s">
+      <div class="svc-icon">👶</div>
+      <h3>Paediatrics & Neonatology</h3>
+      <p>Specialized children's healthcare from birth through adolescence. Level III NICU for premature and critically ill newborns, managed by experienced neonatologists.</p>
+      <span class="svc-tag">Level III NICU</span>
+    </div>
+    <div class="service-card fade-up" style="animation-delay:.5s">
+      <div class="svc-icon">🫁</div>
+      <h3>Pulmonology & Chest Care</h3>
+      <p>Treatment of asthma, COPD, interstitial lung disease, sleep apnea, tuberculosis, and lung transplant evaluation. Modern bronchoscopy and spirometry suites.</p>
+      <span class="svc-tag">Sleep Lab Available</span>
+    </div>
+    <div class="service-card fade-up" style="animation-delay:.6s">
+      <div class="svc-icon">👁️</div>
+      <h3>Ophthalmology</h3>
+      <p>LASIK, cataract surgery, retina detachment repair, corneal transplant, glaucoma treatment, and pediatric eye care. State-of-the-art femtosecond laser facility.</p>
+      <span class="svc-tag">Laser Vision Centre</span>
+    </div>
+    <div class="service-card fade-up" style="animation-delay:.7s">
+      <div class="svc-icon">🦷</div>
+      <h3>Dental & Maxillofacial</h3>
+      <p>Dental implants, orthodontics, oral surgery, TMJ disorders, reconstructive jaw surgery, and cosmetic dentistry. Digital smile design and 3D dental imaging.</p>
+      <span class="svc-tag">3D Dental Imaging</span>
+    </div>
+    <div class="service-card fade-up" style="animation-delay:.8s">
+      <div class="svc-icon">🧪</div>
+      <h3>Diagnostics & Pathology</h3>
+      <p>Advanced imaging (1.5T & 3T MRI, 128-slice CT, PET-CT), digital X-ray, 4D ultrasound, NABL-accredited lab with same-day reports and home collection.</p>
+      <span class="svc-tag">NABL Accredited Lab</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DOCTORS ═══════════════ -->
+<section id="doctors">
+  <div style="text-align:center;">
+    <div class="section-tag">Our Team</div>
+    <h2 class="section-title">Meet Our <span>Expert</span> Doctors</h2>
+    <p class="section-desc" style="margin:0 auto;">Our panel of 500+ doctors includes nationally & internationally trained specialists, combining expertise with empathy.</p>
+  </div>
+  <div class="doctors-grid">
+    <!-- Doctor 1 -->
+    <div class="doctor-card fade-up">
+      <div class="doc-img" style="background:linear-gradient(135deg,#0D1535,#1A1045);">
+        <svg viewBox="0 0 120 200" width="120" height="200" style="position:absolute;bottom:0;">
+          <defs>
+            <linearGradient id="skin1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#C8956C"/>
+              <stop offset="100%" stop-color="#A0724A"/>
+            </linearGradient>
+            <linearGradient id="coat1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="100%" stop-color="#E8F4F8"/>
+            </linearGradient>
+          </defs>
+          <!-- Body/coat -->
+          <rect x="20" y="95" width="80" height="105" fill="url(#coat1)" rx="8"/>
+          <!-- Coat collar -->
+          <polygon points="60,95 45,115 60,105" fill="#ccc"/>
+          <polygon points="60,95 75,115 60,105" fill="#ddd"/>
+          <!-- Stethoscope -->
+          <path d="M45,110 Q35,130 40,145 Q45,155 55,150" fill="none" stroke="#1A1040" stroke-width="2.5"/>
+          <circle cx="55" cy="150" r="5" fill="#1A1040"/>
+          <!-- ID badge -->
+          <rect x="65" y="115" width="22" height="14" fill="#00F5A0" rx="2"/>
+          <text x="76" y="125" fill="#fff" font-size="5" text-anchor="middle" font-weight="bold">Dr.</text>
+          <!-- Pocket -->
+          <rect x="30" y="118" width="18" height="14" fill="#f0f0f0" stroke="#ddd" stroke-width=".5" rx="2"/>
+          <rect x="34" y="112" width="2" height="8" fill="#FF6B6B"/>
+          <rect x="37" y="112" width="2" height="8" fill="#00F5A0"/>
+          <!-- Neck -->
+          <rect x="50" y="74" width="20" height="26" fill="url(#skin1)" rx="4"/>
+          <!-- Head -->
+          <ellipse cx="60" cy="58" rx="26" ry="30" fill="url(#skin1)"/>
+          <!-- Hair -->
+          <ellipse cx="60" cy="34" rx="26" ry="12" fill="#1A0A00"/>
+          <rect x="34" y="34" width="10" height="18" fill="#1A0A00" rx="3"/>
+          <rect x="76" y="34" width="10" height="18" fill="#1A0A00" rx="3"/>
+          <!-- Eyes -->
+          <ellipse cx="50" cy="58" rx="5" ry="6" fill="#fff"/>
+          <ellipse cx="70" cy="58" rx="5" ry="6" fill="#fff"/>
+          <circle cx="51" cy="59" r="3" fill="#1A0A00"/>
+          <circle cx="71" cy="59" r="3" fill="#1A0A00"/>
+          <circle cx="52" cy="57" r="1" fill="#fff"/>
+          <circle cx="72" cy="57" r="1" fill="#fff"/>
+          <!-- Eyebrows -->
+          <path d="M44,50 Q51,46 56,50" fill="none" stroke="#1A0A00" stroke-width="2" stroke-linecap="round"/>
+          <path d="M64,50 Q69,46 76,50" fill="none" stroke="#1A0A00" stroke-width="2" stroke-linecap="round"/>
+          <!-- Nose -->
+          <ellipse cx="60" cy="67" rx="4" ry="3" fill="#B07848"/>
+          <!-- Smile -->
+          <path d="M52,76 Q60,82 68,76" fill="none" stroke="#8B5A3C" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Ears -->
+          <ellipse cx="34" cy="60" rx="5" ry="7" fill="url(#skin1)"/>
+          <ellipse cx="86" cy="60" rx="5" ry="7" fill="url(#skin1)"/>
+        </svg>
+      </div>
+      <div class="doc-info">
+        <div class="doc-name">Dr. Rajesh Kumar</div>
+        <div class="doc-spec">🫀 Senior Cardiologist</div>
+        <div class="doc-meta">
+          <span>MBBS, MD, DM</span>
+          <span class="doc-stars">★★★★★</span>
+        </div>
+        <div class="doc-meta" style="margin-top:6px;"><span>22 yrs experience</span><span>500+ surgeries</span></div>
+        <div class="doc-avail"><div class="avail-dot"></div><span>Available Today</span></div>
+      </div>
+    </div>
+    <!-- Doctor 2 (Female) -->
+    <div class="doctor-card fade-up" style="animation-delay:.1s">
+      <div class="doc-img" style="background:linear-gradient(135deg,#1A0A30,#2A1050);">
+        <svg viewBox="0 0 120 200" width="120" height="200" style="position:absolute;bottom:0;">
+          <defs>
+            <linearGradient id="skin2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#D4A574"/>
+              <stop offset="100%" stop-color="#B08050"/>
+            </linearGradient>
+          </defs>
+          <!-- Coat -->
+          <rect x="18" y="98" width="84" height="102" fill="#FAFAFA" rx="8"/>
+          <polygon points="60,98 44,120 60,108" fill="#ddd"/>
+          <polygon points="60,98 76,120 60,108" fill="#eee"/>
+          <!-- Stethoscope -->
+          <path d="M44,112 Q33,135 38,148 Q44,160 56,154" fill="none" stroke="#1A1040" stroke-width="2.5"/>
+          <circle cx="56" cy="154" r="5" fill="#1A1040"/>
+          <!-- Scarf/dupatta hint -->
+          <path d="M36,98 Q60,88 84,98" fill="none" stroke="#9B59B6" stroke-width="3" opacity=".5"/>
+          <!-- Neck -->
+          <rect x="50" y="76" width="20" height="28" fill="url(#skin2)" rx="4"/>
+          <!-- Head -->
+          <ellipse cx="60" cy="58" rx="26" ry="30" fill="url(#skin2)"/>
+          <!-- Hair - long -->
+          <ellipse cx="60" cy="32" rx="28" ry="14" fill="#0A0500"/>
+          <rect x="84" y="36" width="8" height="60" fill="#0A0500" rx="4"/>
+          <rect x="28" y="36" width="8" height="40" fill="#0A0500" rx="4"/>
+          <!-- Bindi -->
+          <circle cx="60" cy="46" r="2.5" fill="#FF0000"/>
+          <!-- Eyes with kajal -->
+          <ellipse cx="50" cy="59" rx="6" ry="5.5" fill="#fff"/>
+          <ellipse cx="70" cy="59" rx="6" ry="5.5" fill="#fff"/>
+          <circle cx="51" cy="60" r="3.5" fill="#1A0A00"/>
+          <circle cx="71" cy="60" r="3.5" fill="#1A0A00"/>
+          <circle cx="52" cy="58" r="1" fill="#fff"/>
+          <circle cx="72" cy="58" r="1" fill="#fff"/>
+          <!-- Eyebrows -->
+          <path d="M43,51 Q51,47 57,51" fill="none" stroke="#0A0500" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M63,51 Q69,47 77,51" fill="none" stroke="#0A0500" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Nose -->
+          <ellipse cx="60" cy="68" rx="4" ry="3" fill="#C09060"/>
+          <circle cx="56" cy="70" r="1.5" fill="#9B59B6" opacity=".7"/>
+          <!-- Smile -->
+          <path d="M51,77 Q60,84 69,77" fill="none" stroke="#8B5A3C" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Ears -->
+          <ellipse cx="34" cy="60" rx="5" ry="7" fill="url(#skin2)"/>
+          <ellipse cx="86" cy="60" rx="5" ry="7" fill="url(#skin2)"/>
+          <!-- Earrings -->
+          <circle cx="34" cy="64" r="3" fill="#FFD700"/>
+          <circle cx="86" cy="64" r="3" fill="#FFD700"/>
+          <!-- ID badge -->
+          <rect x="64" y="118" width="24" height="16" fill="#9B59B6" rx="2"/>
+          <text x="76" y="129" fill="#fff" font-size="5" text-anchor="middle">Dr.</text>
+        </svg>
+      </div>
+      <div class="doc-info">
+        <div class="doc-name">Dr. Priya Sharma</div>
+        <div class="doc-spec">🧠 Neurologist</div>
+        <div class="doc-meta">
+          <span>MBBS, MD, DM</span>
+          <span class="doc-stars">★★★★★</span>
+        </div>
+        <div class="doc-meta" style="margin-top:6px;"><span>18 yrs experience</span><span>Gold Medalist</span></div>
+        <div class="doc-avail"><div class="avail-dot"></div><span>Available Today</span></div>
+      </div>
+    </div>
+    <!-- Doctor 3 -->
+    <div class="doctor-card fade-up" style="animation-delay:.2s">
+      <div class="doc-img" style="background:linear-gradient(135deg,#0A2030,#1A3040);">
+        <svg viewBox="0 0 120 200" width="120" height="200" style="position:absolute;bottom:0;">
+          <defs>
+            <linearGradient id="skin3" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#BC8A5F"/>
+              <stop offset="100%" stop-color="#9A6840"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="95" width="80" height="105" fill="#FFFFFF" rx="8"/>
+          <polygon points="60,95 44,118 60,106" fill="#ccc"/>
+          <polygon points="60,95 76,118 60,106" fill="#ddd"/>
+          <path d="M46,112 Q36,132 41,146 Q47,157 57,151" fill="none" stroke="#1A1040" stroke-width="2.5"/>
+          <circle cx="57" cy="151" r="5" fill="#1A1040"/>
+          <rect x="30" y="118" width="18" height="14" fill="#f0f0f0" stroke="#ddd" rx="2"/>
+          <rect x="34" y="112" width="2" height="8" fill="#00F5A0"/>
+          <rect x="37" y="112" width="2" height="8" fill="#FF6B6B"/>
+          <rect x="50" y="74" width="20" height="26" fill="url(#skin3)" rx="4"/>
+          <ellipse cx="60" cy="58" rx="26" ry="30" fill="url(#skin3)"/>
+          <!-- Grey hair - senior doctor -->
+          <ellipse cx="60" cy="34" rx="26" ry="12" fill="#888"/>
+          <rect x="34" y="34" width="9" height="18" fill="#888" rx="3"/>
+          <rect x="77" y="34" width="9" height="18" fill="#888" rx="3"/>
+          <!-- Glasses -->
+          <rect x="42" y="55" width="14" height="10" fill="none" stroke="#555" stroke-width="1.5" rx="2"/>
+          <rect x="64" y="55" width="14" height="10" fill="none" stroke="#555" stroke-width="1.5" rx="2"/>
+          <line x1="56" y1="60" x2="64" y2="60" stroke="#555" stroke-width="1.5"/>
+          <line x1="34" y1="60" x2="42" y2="60" stroke="#555" stroke-width="1"/>
+          <line x1="78" y1="60" x2="86" y2="60" stroke="#555" stroke-width="1"/>
+          <ellipse cx="49" cy="60" rx="5" ry="4" fill="#1A0A00"/>
+          <ellipse cx="71" cy="60" rx="5" ry="4" fill="#1A0A00"/>
+          <circle cx="50" cy="58" r="1" fill="#fff"/>
+          <circle cx="72" cy="58" r="1" fill="#fff"/>
+          <path d="M44,49 Q51,45 56,49" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M64,49 Q69,45 76,49" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="60" cy="68" rx="4" ry="3" fill="#A07848"/>
+          <path d="M52,77 Q60,82 68,77" fill="none" stroke="#7B4A2C" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="34" cy="60" rx="5" ry="7" fill="url(#skin3)"/>
+          <ellipse cx="86" cy="60" rx="5" ry="7" fill="url(#skin3)"/>
+          <!-- Clip board -->
+          <rect x="72" y="130" width="22" height="28" fill="#E8E8E8" rx="2"/>
+          <rect x="74" y="135" width="18" height="2" fill="#888"/>
+          <rect x="74" y="140" width="14" height="2" fill="#888"/>
+          <rect x="74" y="145" width="16" height="2" fill="#888"/>
+        </svg>
+      </div>
+      <div class="doc-info">
+        <div class="doc-name">Dr. Suresh Reddy</div>
+        <div class="doc-spec">🦴 Orthopaedic Surgeon</div>
+        <div class="doc-meta">
+          <span>MBBS, MS, MCh</span>
+          <span class="doc-stars">★★★★★</span>
+        </div>
+        <div class="doc-meta" style="margin-top:6px;"><span>30 yrs experience</span><span>HOD</span></div>
+        <div class="doc-avail"><div class="avail-dot"></div><span>Available Tomorrow</span></div>
+      </div>
+    </div>
+    <!-- Doctor 4 (Female Oncologist) -->
+    <div class="doctor-card fade-up" style="animation-delay:.3s">
+      <div class="doc-img" style="background:linear-gradient(135deg,#200A30,#3A1050);">
+        <svg viewBox="0 0 120 200" width="120" height="200" style="position:absolute;bottom:0;">
+          <defs>
+            <linearGradient id="skin4" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E8C49A"/>
+              <stop offset="100%" stop-color="#C8A070"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="96" width="80" height="104" fill="#FAFAFA" rx="8"/>
+          <polygon points="60,96 45,118 60,108" fill="#ddd"/>
+          <polygon points="60,96 75,118 60,108" fill="#eee"/>
+          <path d="M45,112 Q34,134 39,148 Q45,160 57,153" fill="none" stroke="#1A1040" stroke-width="2.5"/>
+          <circle cx="57" cy="153" r="5" fill="#1A1040"/>
+          <rect x="50" y="75" width="20" height="26" fill="url(#skin4)" rx="4"/>
+          <ellipse cx="60" cy="58" rx="26" ry="30" fill="url(#skin4)"/>
+          <!-- Long curly hair -->
+          <ellipse cx="60" cy="32" rx="28" ry="14" fill="#1A0500"/>
+          <rect x="82" y="34" width="10" height="80" fill="#1A0500" rx="5"/>
+          <rect x="28" y="34" width="10" height="55" fill="#1A0500" rx="5"/>
+          <!-- Hair highlights -->
+          <rect x="85" y="40" width="3" height="40" fill="#3A1010" rx="2"/>
+          <!-- Bindi -->
+          <circle cx="60" cy="46" r="2" fill="#CC0000"/>
+          <!-- Earrings - jhumka style -->
+          <circle cx="34" cy="62" r="4" fill="#FFD700"/>
+          <circle cx="34" cy="68" r="3" fill="#FFD700"/>
+          <circle cx="86" cy="62" r="4" fill="#FFD700"/>
+          <circle cx="86" cy="68" r="3" fill="#FFD700"/>
+          <!-- Eyes -->
+          <ellipse cx="50" cy="59" rx="6" ry="5" fill="#fff"/>
+          <ellipse cx="70" cy="59" rx="6" ry="5" fill="#fff"/>
+          <circle cx="51" cy="60" r="3.5" fill="#1A0500"/>
+          <circle cx="71" cy="60" r="3.5" fill="#1A0500"/>
+          <circle cx="52" cy="58" r="1.2" fill="#fff"/>
+          <circle cx="72" cy="58" r="1.2" fill="#fff"/>
+          <path d="M44,51 Q51,46 57,51" fill="none" stroke="#0A0500" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M63,51 Q69,46 76,51" fill="none" stroke="#0A0500" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="60" cy="68" rx="4" ry="3" fill="#D0A070"/>
+          <path d="M51,77 Q60,85 69,77" fill="none" stroke="#A07048" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="34" cy="60" rx="5" ry="7" fill="url(#skin4)"/>
+          <ellipse cx="86" cy="60" rx="5" ry="7" fill="url(#skin4)"/>
+        </svg>
+      </div>
+      <div class="doc-info">
+        <div class="doc-name">Dr. Anitha Nair</div>
+        <div class="doc-spec">🎗️ Oncologist</div>
+        <div class="doc-meta">
+          <span>MBBS, MD, DNB</span>
+          <span class="doc-stars">★★★★★</span>
+        </div>
+        <div class="doc-meta" style="margin-top:6px;"><span>15 yrs experience</span><span>Researcher</span></div>
+        <div class="doc-avail"><div class="avail-dot"></div><span>Available Today</span></div>
+      </div>
+    </div>
+    <!-- Doctor 5 -->
+    <div class="doctor-card fade-up" style="animation-delay:.4s">
+      <div class="doc-img" style="background:linear-gradient(135deg,#0A2A1A,#1A1045);">
+        <svg viewBox="0 0 120 200" width="120" height="200" style="position:absolute;bottom:0;">
+          <defs>
+            <linearGradient id="skin5" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#C49060"/>
+              <stop offset="100%" stop-color="#A07040"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="96" width="80" height="104" fill="#FAFAFA" rx="8"/>
+          <polygon points="60,96 45,118 60,108" fill="#ccc"/>
+          <polygon points="60,96 75,118 60,108" fill="#ddd"/>
+          <path d="M45,112 Q35,134 40,148 Q46,158 57,152" fill="none" stroke="#1A1040" stroke-width="2.5"/>
+          <circle cx="57" cy="152" r="5" fill="#1A1040"/>
+          <rect x="50" y="74" width="20" height="27" fill="url(#skin5)" rx="4"/>
+          <ellipse cx="60" cy="57" rx="26" ry="30" fill="url(#skin5)"/>
+          <ellipse cx="60" cy="33" rx="24" ry="11" fill="#050200"/>
+          <rect x="36" y="33" width="8" height="16" fill="#050200" rx="3"/>
+          <rect x="76" y="33" width="8" height="16" fill="#050200" rx="3"/>
+          <ellipse cx="50" cy="58" rx="5.5" ry="5" fill="#fff"/>
+          <ellipse cx="70" cy="58" rx="5.5" ry="5" fill="#fff"/>
+          <circle cx="51" cy="59" r="3" fill="#050200"/>
+          <circle cx="71" cy="59" r="3" fill="#050200"/>
+          <circle cx="52" cy="57" r="1" fill="#fff"/>
+          <circle cx="72" cy="57" r="1" fill="#fff"/>
+          <path d="M44,49 Q51,45 56,49" fill="none" stroke="#050200" stroke-width="2" stroke-linecap="round"/>
+          <path d="M64,49 Q69,45 76,49" fill="none" stroke="#050200" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="60" cy="67" rx="4" ry="3" fill="#A07848"/>
+          <path d="M52,76 Q60,82 68,76" fill="none" stroke="#7B4A2C" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Mustache -->
+          <path d="M53,74 Q60,78 67,74" fill="#050200" opacity=".8"/>
+          <ellipse cx="34" cy="60" rx="5" ry="7" fill="url(#skin5)"/>
+          <ellipse cx="86" cy="60" rx="5" ry="7" fill="url(#skin5)"/>
+          <rect x="66" y="116" width="22" height="14" fill="#00F5A0" rx="2"/>
+          <text x="77" y="126" fill="#fff" font-size="5" text-anchor="middle">Dr.</text>
+        </svg>
+      </div>
+      <div class="doc-info">
+        <div class="doc-name">Dr. Venkat Rao</div>
+        <div class="doc-spec">👶 Paediatrician</div>
+        <div class="doc-meta">
+          <span>MBBS, MD, DCH</span>
+          <span class="doc-stars">★★★★★</span>
+        </div>
+        <div class="doc-meta" style="margin-top:6px;"><span>20 yrs experience</span><span>Child Specialist</span></div>
+        <div class="doc-avail"><div class="avail-dot"></div><span>Available Today</span></div>
+      </div>
+    </div>
+    <!-- Doctor 6 -->
+    <div class="doctor-card fade-up" style="animation-delay:.5s">
+      <div class="doc-img" style="background:linear-gradient(135deg,#0A1A30,#1A2A50);">
+        <svg viewBox="0 0 120 200" width="120" height="200" style="position:absolute;bottom:0;">
+          <defs>
+            <linearGradient id="skin6" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#DCAA78"/>
+              <stop offset="100%" stop-color="#BA8858"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="96" width="80" height="104" fill="#FAFAFA" rx="8"/>
+          <polygon points="60,96 45,118 60,108" fill="#ddd"/>
+          <polygon points="60,96 75,118 60,108" fill="#eee"/>
+          <path d="M44,112 Q33,134 38,148 Q44,158 56,152" fill="none" stroke="#1A1040" stroke-width="2.5"/>
+          <circle cx="56" cy="152" r="5" fill="#1A1040"/>
+          <rect x="50" y="74" width="20" height="27" fill="url(#skin6)" rx="4"/>
+          <ellipse cx="60" cy="57" rx="26" ry="30" fill="url(#skin6)"/>
+          <!-- Hair with bun -->
+          <ellipse cx="60" cy="30" rx="27" ry="13" fill="#1A0800"/>
+          <rect x="34" y="30" width="8" height="22" fill="#1A0800" rx="4"/>
+          <rect x="78" y="30" width="8" height="22" fill="#1A0800" rx="4"/>
+          <circle cx="60" cy="25" r="10" fill="#1A0800"/>
+          <!-- Red bindi -->
+          <circle cx="60" cy="44" r="2.5" fill="#CC0000"/>
+          <!-- Eyes -->
+          <ellipse cx="50" cy="59" rx="6" ry="5" fill="#fff"/>
+          <ellipse cx="70" cy="59" rx="6" ry="5" fill="#fff"/>
+          <circle cx="51" cy="60" r="3.5" fill="#1A0800"/>
+          <circle cx="71" cy="60" r="3.5" fill="#1A0800"/>
+          <circle cx="52" cy="58" r="1" fill="#fff"/>
+          <circle cx="72" cy="58" r="1" fill="#fff"/>
+          <path d="M44,51 Q51,46 57,51" fill="none" stroke="#0A0500" stroke-width="2" stroke-linecap="round"/>
+          <path d="M63,51 Q69,46 76,51" fill="none" stroke="#0A0500" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="60" cy="68" rx="4" ry="3" fill="#BA9060"/>
+          <path d="M51,77 Q60,84 69,77" fill="none" stroke="#9A6840" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="34" cy="60" rx="5" ry="7" fill="url(#skin6)"/>
+          <ellipse cx="86" cy="60" rx="5" ry="7" fill="url(#skin6)"/>
+          <circle cx="34" cy="65" r="3" fill="#FFD700"/>
+          <circle cx="86" cy="65" r="3" fill="#FFD700"/>
+        </svg>
+      </div>
+      <div class="doc-info">
+        <div class="doc-name">Dr. Kavitha Menon</div>
+        <div class="doc-spec">👁️ Ophthalmologist</div>
+        <div class="doc-meta">
+          <span>MBBS, MS, FICO</span>
+          <span class="doc-stars">★★★★★</span>
+        </div>
+        <div class="doc-meta" style="margin-top:6px;"><span>14 yrs experience</span><span>LASIK Expert</span></div>
+        <div class="doc-avail"><div class="avail-dot"></div><span>Available Today</span></div>
+      </div>
+    </div>
+    <!-- Doctor 7 -->
+    <div class="doctor-card fade-up" style="animation-delay:.6s">
+      <div class="doc-img" style="background:linear-gradient(135deg,#201A00,#3A3000);">
+        <svg viewBox="0 0 120 200" width="120" height="200" style="position:absolute;bottom:0;">
+          <defs>
+            <linearGradient id="skin7" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#B8906A"/>
+              <stop offset="100%" stop-color="#96704A"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="96" width="80" height="104" fill="#FAFAFA" rx="8"/>
+          <polygon points="60,96 45,118 60,108" fill="#ccc"/>
+          <polygon points="60,96 75,118 60,108" fill="#ddd"/>
+          <path d="M46,112 Q36,134 41,148 Q47,159 57,153" fill="none" stroke="#1A1040" stroke-width="2.5"/>
+          <circle cx="57" cy="153" r="5" fill="#1A1040"/>
+          <rect x="50" y="75" width="20" height="26" fill="url(#skin7)" rx="4"/>
+          <ellipse cx="60" cy="58" rx="26" ry="30" fill="url(#skin7)"/>
+          <ellipse cx="60" cy="34" rx="25" ry="12" fill="#0A0500"/>
+          <rect x="35" y="34" width="8" height="16" fill="#0A0500" rx="3"/>
+          <rect x="77" y="34" width="8" height="16" fill="#0A0500" rx="3"/>
+          <ellipse cx="50" cy="59" rx="5" ry="5" fill="#fff"/>
+          <ellipse cx="70" cy="59" rx="5" ry="5" fill="#fff"/>
+          <circle cx="51" cy="60" r="3" fill="#0A0500"/>
+          <circle cx="71" cy="60" r="3" fill="#0A0500"/>
+          <circle cx="52" cy="58" r="1" fill="#fff"/>
+          <circle cx="72" cy="58" r="1" fill="#fff"/>
+          <path d="M44,50 Q51,46 56,50" fill="none" stroke="#0A0500" stroke-width="2" stroke-linecap="round"/>
+          <path d="M64,50 Q69,46 76,50" fill="none" stroke="#0A0500" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="60" cy="68" rx="4" ry="3" fill="#A07848"/>
+          <path d="M53,77 Q60,82 67,77" fill="none" stroke="#7B4A2C" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="34" cy="60" rx="5" ry="7" fill="url(#skin7)"/>
+          <ellipse cx="86" cy="60" rx="5" ry="7" fill="url(#skin7)"/>
+          <!-- Turban -->
+          <ellipse cx="60" cy="28" rx="28" ry="14" fill="#FF6B00"/>
+          <rect x="32" y="28" width="56" height="8" fill="#FF6B00"/>
+          <ellipse cx="60" cy="28" rx="10" ry="6" fill="#FFD700"/>
+        </svg>
+      </div>
+      <div class="doc-info">
+        <div class="doc-name">Dr. Gurpreet Singh</div>
+        <div class="doc-spec">🫁 Pulmonologist</div>
+        <div class="doc-meta">
+          <span>MBBS, MD, FCCP</span>
+          <span class="doc-stars">★★★★★</span>
+        </div>
+        <div class="doc-meta" style="margin-top:6px;"><span>17 yrs experience</span><span>Chest Specialist</span></div>
+        <div class="doc-avail"><div class="avail-dot"></div><span>Available Today</span></div>
+      </div>
+    </div>
+    <!-- Doctor 8 -->
+    <div class="doctor-card fade-up" style="animation-delay:.7s">
+      <div class="doc-img" style="background:linear-gradient(135deg,#200A1A,#3A1030);">
+        <svg viewBox="0 0 120 200" width="120" height="200" style="position:absolute;bottom:0;">
+          <defs>
+            <linearGradient id="skin8" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E0B488"/>
+              <stop offset="100%" stop-color="#BE9068"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="96" width="80" height="104" fill="#FAFAFA" rx="8"/>
+          <polygon points="60,96 45,118 60,108" fill="#ddd"/>
+          <polygon points="60,96 75,118 60,108" fill="#eee"/>
+          <path d="M44,112 Q34,134 39,148 Q45,159 56,152" fill="none" stroke="#1A1040" stroke-width="2.5"/>
+          <circle cx="56" cy="152" r="5" fill="#1A1040"/>
+          <rect x="50" y="74" width="20" height="27" fill="url(#skin8)" rx="4"/>
+          <ellipse cx="60" cy="57" rx="26" ry="30" fill="url(#skin8)"/>
+          <!-- Short wavy hair -->
+          <ellipse cx="60" cy="30" rx="27" ry="14" fill="#2A0A00"/>
+          <rect x="33" y="30" width="9" height="20" fill="#2A0A00" rx="4"/>
+          <rect x="78" y="30" width="9" height="20" fill="#2A0A00" rx="4"/>
+          <ellipse cx="60" cy="28" rx="18" ry="8" fill="#3A1200"/>
+          <circle cx="60" cy="45" r="2" fill="#CC0000"/>
+          <ellipse cx="50" cy="59" rx="6" ry="5" fill="#fff"/>
+          <ellipse cx="70" cy="59" rx="6" ry="5" fill="#fff"/>
+          <circle cx="51" cy="60" r="3.5" fill="#1A0500"/>
+          <circle cx="71" cy="60" r="3.5" fill="#1A0500"/>
+          <circle cx="52" cy="58" r="1" fill="#fff"/>
+          <circle cx="72" cy="58" r="1" fill="#fff"/>
+          <path d="M44,50 Q51,46 57,50" fill="none" stroke="#0A0500" stroke-width="2" stroke-linecap="round"/>
+          <path d="M63,50 Q69,46 76,50" fill="none" stroke="#0A0500" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="60" cy="68" rx="4" ry="3" fill="#C09060"/>
+          <path d="M51,77 Q60,84 69,77" fill="none" stroke="#9A6840" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="34" cy="60" rx="5" ry="7" fill="url(#skin8)"/>
+          <ellipse cx="86" cy="60" rx="5" ry="7" fill="url(#skin8)"/>
+          <!-- Mangalsutra hint -->
+          <path d="M44,100 Q60,114 76,100" fill="none" stroke="#1A0A00" stroke-width="1" opacity=".5"/>
+          <circle cx="60" cy="114" r="3" fill="#FFD700" opacity=".7"/>
+        </svg>
+      </div>
+      <div class="doc-info">
+        <div class="doc-name">Dr. Deepa Iyer</div>
+        <div class="doc-spec">🧪 Pathologist</div>
+        <div class="doc-meta">
+          <span>MBBS, MD, DNB</span>
+          <span class="doc-stars">★★★★★</span>
+        </div>
+        <div class="doc-meta" style="margin-top:6px;"><span>12 yrs experience</span><span>Lab Director</span></div>
+        <div class="doc-avail"><div class="avail-dot"></div><span>Available Today</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BOOK APPOINTMENT ═══════════════ -->
+<section id="appointment" style="background:linear-gradient(180deg,rgba(0,245,160,.04) 0%,transparent 100%);">
+  <div style="text-align:center;">
+    <div class="section-tag">Online Booking</div>
+    <h2 class="section-title">Book an <span>Appointment</span></h2>
+    <p class="section-desc" style="margin:0 auto;">Fill in your details below and our team will confirm your appointment. You'll receive confirmation on your mobile & email.</p>
+  </div>
+  <div class="appt-wrap fade-up">
+    <div class="appt-title">Schedule Your Visit</div>
+    <div class="appt-subtitle">Confirmation sent to your mobile number & email instantly</div>
+    <!-- Progress Steps -->
+    <div class="steps-bar" style="margin-bottom:50px;">
+      <div class="step active" id="step1">
+        <div class="step-circle" id="sc1">1</div>
+        <div class="step-line"></div>
+        <div class="step-label">Patient Info</div>
+      </div>
+      <div class="step" id="step2">
+        <div class="step-circle" id="sc2">2</div>
+        <div class="step-line"></div>
+        <div class="step-label">Appointment</div>
+      </div>
+      <div class="step" id="step3">
+        <div class="step-circle" id="sc3">3</div>
+        <div class="step-line" style="background:transparent;"></div>
+        <div class="step-label">Confirm</div>
+      </div>
+    </div>
+
+    <!-- STEP 1: Patient Info -->
+    <div id="apptStep1">
+      <div class="appt-grid">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="patName" placeholder="e.g. Ravi Shankar" />
+        </div>
+        <div class="form-group">
+          <label>Age *</label>
+          <input type="number" id="patAge" placeholder="e.g. 35" min="1" max="120"/>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number (India) *</label>
+          <input type="tel" id="patMobile" placeholder="+91 98765 43210" maxlength="15"/>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="patEmail" placeholder="yourname@email.com"/>
+        </div>
+        <div class="form-group">
+          <label>Gender *</label>
+          <select id="patGender">
+            <option value="">Select Gender</option>
+            <option>Male</option><option>Female</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Blood Group</label>
+          <select id="patBlood">
+            <option value="">Select Blood Group</option>
+            <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+            <option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+          </select>
+        </div>
+        <div class="form-group" style="grid-column:1/-1;">
+          <label>Address / City</label>
+          <input type="text" id="patCity" placeholder="e.g. Vijayawada, Andhra Pradesh"/>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="goStep2()" style="margin-top:8px;width:100%;font-size:1rem;padding:16px;">Next: Choose Appointment →</button>
+    </div>
+
+    <!-- STEP 2: Appointment -->
+    <div id="apptStep2" style="display:none;">
+      <div class="appt-grid">
+        <div class="form-group">
+          <label>Select Department *</label>
+          <select id="apptDept" onchange="updateDoctors()">
+            <option value="">Choose Department</option>
+            <option>Cardiology</option><option>Neurology</option><option>Orthopaedics</option>
+            <option>Oncology</option><option>Paediatrics</option><option>Ophthalmology</option>
+            <option>Pulmonology</option><option>Pathology & Diagnostics</option><option>General Medicine</option><option>Gynaecology</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Select Doctor *</label>
+          <select id="apptDoc">
+            <option value="">Select Department First</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Date *</label>
+          <input type="date" id="apptDate"/>
+        </div>
+        <div class="form-group">
+          <label>Preferred Time Slot *</label>
+          <select id="apptTime">
+            <option value="">Select Slot</option>
+            <option>09:00 AM – 09:30 AM</option><option>09:30 AM – 10:00 AM</option>
+            <option>10:00 AM – 10:30 AM</option><option>10:30 AM – 11:00 AM</option>
+            <option>11:00 AM – 11:30 AM</option><option>11:30 AM – 12:00 PM</option>
+            <option>02:00 PM – 02:30 PM</option><option>02:30 PM – 03:00 PM</option>
+            <option>03:00 PM – 03:30 PM</option><option>04:00 PM – 04:30 PM</option>
+            <option>05:00 PM – 05:30 PM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Visit Type *</label>
+          <select id="apptType">
+            <option>In-Person Consultation</option>
+            <option>Video Consultation (Teleconsult)</option>
+            <option>Follow-up Visit</option>
+            <option>Health Check-up Package</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Referral / Health Insurance</label>
+          <input type="text" id="apptInsurance" placeholder="e.g. Star Health, Ayushman Bharat"/>
+        </div>
+        <div class="form-group" style="grid-column:1/-1;">
+          <label>Reason for Visit / Symptoms</label>
+          <textarea id="apptReason" placeholder="Describe your symptoms or reason for visit..." rows="3"></textarea>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:8px;">
+        <button class="btn-outline" onclick="goStep1()" style="width:40%;padding:16px;">← Back</button>
+        <button class="btn-primary" onclick="goStep3()" style="flex:1;padding:16px;font-size:1rem;">Review & Confirm →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Review -->
+    <div id="apptStep3" style="display:none;">
+      <div id="reviewBox" style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:24px;"></div>
+      <div class="appt-note">
+        <div class="note-icon">📲</div>
+        <div class="note-text">Upon confirmation, <strong>SMS will be sent to your Indian mobile number</strong> and <strong>email confirmation</strong> will be delivered to your inbox with appointment ID, doctor details, and hospital directions. Emergency: <strong>+91 1800-123-456</strong></div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:20px;">
+        <button class="btn-outline" onclick="goStep2()" style="width:40%;padding:16px;">← Edit</button>
+        <button class="btn-primary" onclick="confirmBooking()" id="confirmBtn" style="flex:1;padding:16px;font-size:1rem;">✅ Confirm Appointment</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact">
+  <div class="section-tag">Get In Touch</div>
+  <h2 class="section-title">Contact <span>Us</span></h2>
+  <div class="contact-grid">
+    <div class="fade-up">
+      <div class="contact-info-cards">
+        <div class="cinfo-card">
+          <div class="cinfo-icon">📍</div>
+          <div class="cinfo-text">
+            <strong>Hospital Address</strong>
+            <p>MediCurePlus Hospital, MG Road,<br>Vijayawada, Andhra Pradesh – 520001</p>
+          </div>
+        </div>
+        <div class="cinfo-card">
+          <div class="cinfo-icon">📞</div>
+          <div class="cinfo-text">
+            <strong>Phone Numbers</strong>
+            <p>Appointments: +91 98765 43210<br>Emergency: +91 1800-123-456 (Toll Free)</p>
+          </div>
+        </div>
+        <div class="cinfo-card">
+          <div class="cinfo-icon">✉️</div>
+          <div class="cinfo-text">
+            <strong>Email</strong>
+            <p>appointments@medicureplus.in<br>info@medicureplus.in</p>
+          </div>
+        </div>
+        <div class="cinfo-card">
+          <div class="cinfo-icon">⏰</div>
+          <div class="cinfo-text">
+            <strong>Visiting Hours</strong>
+            <p>OPD: Mon–Sat, 8 AM – 8 PM<br>Emergency: 24/7 (All days including holidays)</p>
+          </div>
+        </div>
+        <div class="cinfo-card">
+          <div class="cinfo-icon">🚌</div>
+          <div class="cinfo-text">
+            <strong>How to Reach Us</strong>
+            <p>5 min from Vijayawada Railway Station<br>APSRTC buses: 12C, 99, 200 stop at MG Road</p>
+          </div>
+        </div>
+      </div>
+      <div class="map-box">
+        <span>🗺️</span>
+        <p>MediCurePlus Hospital, MG Road, Vijayawada</p>
+      </div>
+    </div>
+    <div class="contact-form fade-up" style="animation-delay:.2s">
+      <h3>Send Us a Message</h3>
+      <p style="color:rgba(255,255,255,.55);font-size:.84rem;margin-bottom:22px;line-height:1.6;">Fill in the details below and click <strong style="color:#00E676;">Send Message</strong> — your enquiry goes directly to our hospital team.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" id="msgName" placeholder="e.g. Ravi Kumar"/>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number *</label>
+          <input type="tel" id="msgMobile" placeholder="+91 98765 43210" maxlength="15"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" id="msgEmail" placeholder="yourname@email.com"/>
+      </div>
+      <div class="form-group">
+        <label>Subject *</label>
+        <select id="msgSubject">
+          <option value="">— Select Subject —</option>
+          <option>General Enquiry</option>
+          <option>Appointment Query</option>
+          <option>Medical Records</option>
+          <option>Insurance &amp; Billing</option>
+          <option>Feedback</option>
+          <option>Career / Joining</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Message *</label>
+        <textarea id="msgBody" placeholder="Type your message here…" rows="4"></textarea>
+      </div>
+      <div id="msgError" style="display:none;color:#FF6B6B;font-size:.83rem;padding:11px 14px;background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.3);border-radius:10px;margin-bottom:14px;line-height:1.6;"></div>
+      <button class="btn-primary" id="msgSendBtn" onclick="sendMessage()" style="width:100%;padding:16px;font-size:1rem;font-weight:700;letter-spacing:.4px;">
+        📨 &nbsp;Send Message to Hospital
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="logo" style="margin-bottom:16px;display:inline-flex;">
+        <div class="logo-icon">🏥</div>
+        <div class="logo-text" style="margin-left:10px;">MediCure<span>+</span></div>
+      </a>
+      <p>One of India's most trusted multi-specialty hospitals, delivering compassionate care with advanced technology since 1999. NABH & JCI Accredited.</p>
+      <div class="footer-socials" style="margin-top:12px;">
+        <a class="social-btn" href="#">📘</a>
+        <a class="social-btn" href="#">📸</a>
+        <a class="social-btn" href="#">🐦</a>
+        <a class="social-btn" href="#">▶️</a>
+        <a class="social-btn" href="#">💼</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Our Doctors</a></li>
+        <li><a href="#appointment">Book Appointment</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Specialities</h4>
+      <ul>
+        <li><a href="#">Cardiology</a></li>
+        <li><a href="#">Neurology</a></li>
+        <li><a href="#">Oncology</a></li>
+        <li><a href="#">Orthopaedics</a></li>
+        <li><a href="#">Paediatrics</a></li>
+        <li><a href="#">Ophthalmology</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Patient Services</h4>
+      <ul>
+        <li><a href="#">Health Packages</a></li>
+        <li><a href="#">Insurance & TPA</a></li>
+        <li><a href="#">Medical Records</a></li>
+        <li><a href="#">Pharmacy</a></li>
+        <li><a href="#">Ambulance Services</a></li>
+        <li><a href="#">Blood Bank</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 MediCurePlus Hospital. All rights reserved. | Designed with ❤️ for Better Health</span>
+    <span>Privacy Policy | Terms of Service | Sitemap</span>
+  </div>
+</footer>
+
+<!-- Confirmation Modal -->
+<div class="modal-overlay" id="confirmModal">
+  <div class="modal">
+    <div class="modal-tick">✓</div>
+    <h2>Appointment Confirmed!</h2>
+    <p>Your appointment is booked at <strong>MediCurePlus Hospital</strong>. Send confirmation to your mobile now.</p>
+    <div class="modal-detail" id="modalDetail"></div>
+
+    <!-- Send Buttons Row -->
+    <div style="display:flex;gap:10px;margin:18px 0 12px;flex-wrap:wrap;">
+
+      <!-- SMS Button -->
+      <a id="smsSendBtn" href="#" style="
+        flex:1;min-width:130px;
+        display:flex;align-items:center;justify-content:center;gap:8px;
+        padding:13px 10px;border-radius:12px;text-decoration:none;
+        background:linear-gradient(135deg,#00E676,#00C853);
+        color:#020A04;font-size:.92rem;font-weight:800;letter-spacing:.3px;
+        box-shadow:0 6px 20px rgba(0,230,118,0.4);
+        transition:transform .2s,box-shadow .2s;">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="#020A04">
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
+          <path d="M7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/>
+        </svg>
+        Send SMS
+      </a>
+
+      <!-- WhatsApp Button -->
+      <a id="waSendBtn" href="#" target="_blank" rel="noopener" style="
+        flex:1;min-width:130px;
+        display:flex;align-items:center;justify-content:center;gap:8px;
+        padding:13px 10px;border-radius:12px;text-decoration:none;
+        background:linear-gradient(135deg,#25D366,#128C7E);
+        color:#fff;font-size:.92rem;font-weight:800;letter-spacing:.3px;
+        box-shadow:0 6px 20px rgba(37,211,102,0.4);
+        transition:transform .2s,box-shadow .2s;">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.524 5.847L.057 23.882a.5.5 0 0 0 .61.61l6.184-1.503A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.528-5.222-1.443l-.374-.224-3.872.94.975-3.763-.245-.389A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+
+    <!-- Status badges -->
+    <div class="notif-row" style="flex-wrap:wrap;margin-bottom:14px;">
+      <div class="notif-badge" style="background:rgba(0,230,118,0.12);border-color:rgba(0,230,118,0.3);color:#00E676;">
+        📱 SMS to Mobile
+      </div>
+      <div class="notif-badge" style="background:rgba(37,211,102,0.12);border-color:rgba(37,211,102,0.3);color:#25D366;">
+        💬 WhatsApp
+      </div>
+      <div class="notif-badge">📧 Email</div>
+    </div>
+
+    <p style="font-size:.76rem;color:rgba(255,255,255,.38);margin-bottom:16px;text-align:center;">
+      Please carry a valid photo ID &amp; arrive 15 minutes early.
+    </p>
+    <button class="btn-primary" onclick="closeModal()" style="width:100%;padding:14px;">
+      ✓ &nbsp;Close &amp; Return Home
+    </button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">✅ Message sent! We'll contact you soon.</div>
+
+<script>
+// ── NAV SCROLL ──
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.background = window.scrollY>80
+    ? 'rgba(13,10,30,0.98)' : 'rgba(13,10,30,0.94)';
+});
+
+// ── MOBILE MENU ──
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ── SCROLL ANIMATIONS ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// ── SET MIN DATE ──
+const apptDate=document.getElementById('apptDate');
+const today=new Date();today.setDate(today.getDate()+1);
+apptDate.min=today.toISOString().split('T')[0];
+
+// ── DOCTORS BY DEPT ──
+const deptDocs={
+  'Cardiology':['Dr. Rajesh Kumar','Dr. Anil Mehta','Dr. Pradeep Gupta'],
+  'Neurology':['Dr. Priya Sharma','Dr. Sunil Iyer','Dr. Meena Krishnan'],
+  'Orthopaedics':['Dr. Suresh Reddy','Dr. Arjun Pillai','Dr. Vikram Nair'],
+  'Oncology':['Dr. Anitha Nair','Dr. Ramesh Chandra','Dr. Sunita Verma'],
+  'Paediatrics':['Dr. Venkat Rao','Dr. Lalitha Bose','Dr. Mahesh Kumar'],
+  'Ophthalmology':['Dr. Kavitha Menon','Dr. Rajan Pillai'],
+  'Pulmonology':['Dr. Gurpreet Singh','Dr. Dinesh Patel'],
+  'Pathology & Diagnostics':['Dr. Deepa Iyer','Dr. Suresh Nambiar'],
+  'General Medicine':['Dr. Kiran Reddy','Dr. Asha Rao'],
+  'Gynaecology':['Dr. Sudha Murthy','Dr. Rekha Pillai']
+};
+function updateDoctors(){
+  const dept=document.getElementById('apptDept').value;
+  const sel=document.getElementById('apptDoc');
+  sel.innerHTML='<option value="">Select Doctor</option>';
+  (deptDocs[dept]||[]).forEach(d=>{const o=document.createElement('option');o.textContent=d;sel.appendChild(o);});
+}
+
+// ── STEP NAVIGATION ──
+function setStep(n){
+  [1,2,3].forEach(i=>{
+    const s=document.getElementById('step'+i);
+    const c=document.getElementById('sc'+i);
+    if(i<n){s.className='step done';c.textContent='✓';}
+    else if(i===n){s.className='step active';}
+    else{s.className='step';c.textContent=i;}
+    document.getElementById('apptStep'+i).style.display=(i===n)?'block':'none';
+  });
+}
+function goStep1(){setStep(1);}
+function goStep2(){
+  if(!document.getElementById('patName').value.trim()){alert('Please enter your full name.');return;}
+  const mob=document.getElementById('patMobile').value.trim();
+  if(!mob){alert('Please enter your mobile number.');return;}
+  if(!/^(\+91[\s\-]?)?[6-9]\d{9}$/.test(mob.replace(/\s/g,''))){alert('Please enter a valid Indian mobile number (starts with 6-9, 10 digits).');return;}
+  if(!document.getElementById('patEmail').value.includes('@')){alert('Please enter a valid email address.');return;}
+  if(!document.getElementById('patGender').value){alert('Please select your gender.');return;}
+  setStep(2);
+}
+function goStep3(){
+  if(!document.getElementById('apptDept').value){alert('Please select a department.');return;}
+  if(!document.getElementById('apptDoc').value){alert('Please select a doctor.');return;}
+  if(!document.getElementById('apptDate').value){alert('Please select a date.');return;}
+  if(!document.getElementById('apptTime').value){alert('Please select a time slot.');return;}
+  // Build review
+  const name=document.getElementById('patName').value;
+  const mob=document.getElementById('patMobile').value;
+  const email=document.getElementById('patEmail').value;
+  const dept=document.getElementById('apptDept').value;
+  const doc=document.getElementById('apptDoc').value;
+  const date=document.getElementById('apptDate').value;
+  const time=document.getElementById('apptTime').value;
+  const type=document.getElementById('apptType').value;
+  const ins=document.getElementById('apptInsurance').value||'Not Provided';
+  const reason=document.getElementById('apptReason').value||'Not specified';
+  const apptId='AP'+Date.now().toString().slice(-8);
+  document.getElementById('reviewBox').innerHTML=`
+    <div style="font-size:.82rem;font-weight:700;color:var(--teal);margin-bottom:14px;letter-spacing:1px;">APPOINTMENT SUMMARY</div>
+    ${row('Appointment ID',apptId)}
+    ${row('Patient Name',name)}
+    ${row('Mobile',mob)}
+    ${row('Email',email)}
+    ${row('Department',dept)}
+    ${row('Doctor',doc)}
+    ${row('Date',formatDate(date))}
+    ${row('Time Slot',time)}
+    ${row('Visit Type',type)}
+    ${row('Insurance',ins)}
+    ${row('Reason',reason)}
+  `;
+  window._apptData={apptId,name,mob,email,dept,doc,date:formatDate(date),time,type};
+  setStep(3);
+}
+function row(k,v){return`<div class="modal-detail-row"><span>${k}</span><span>${v}</span></div>`;}
+function formatDate(d){if(!d)return'';const o=new Date(d);return o.toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'});}
+
+function confirmBooking(){
+  const btn=document.getElementById('confirmBtn');
+  btn.textContent='Processing...';btn.disabled=true;
+  setTimeout(()=>{
+    const d=window._apptData;
+
+    // ── Format mobile number ──
+    const rawMob = d.mob.replace(/[\s\-\(\)]/g,'');
+    const waMob  = rawMob.startsWith('+') ? rawMob.slice(1)
+                 : rawMob.startsWith('91') && rawMob.length===12 ? rawMob
+                 : '91'+rawMob.slice(-10);
+    const smsMob = '+'+waMob;
+
+    // ── SMS message ──
+    const smsText =
+`MediCurePlus Hospital - Appointment Confirmed!
+ID: ${d.apptId}
+Patient: ${d.name}
+Doctor: ${d.doc} (${d.dept})
+Date: ${d.date}
+Time: ${d.time}
+Visit: ${d.type}
+Helpline: +91 1800-123-456
+Arrive 15 mins early with photo ID.`;
+
+    // ── WhatsApp message ──
+    const waMsg =
+`🏥 *MediCurePlus Hospital*
+✅ *Appointment Confirmed!*
+
+📋 *ID:* ${d.apptId}
+👤 *Patient:* ${d.name}
+👨‍⚕️ *Doctor:* ${d.doc}
+🏷️ *Dept:* ${d.dept}
+📅 *Date:* ${d.date}
+⏰ *Time:* ${d.time}
+🩺 *Type:* ${d.type}
+
+📍 MG Road, Vijayawada, AP – 520001
+📞 +91 1800-123-456
+Arrive 15 mins early with photo ID. 🙏`;
+
+    // ── Build URLs ──
+    // sms: works on Android & iOS native SMS app
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const smsURL  = isMobile
+      ? `sms:${smsMob}?body=${encodeURIComponent(smsText)}`
+      : `sms:${smsMob}`;            // desktop fallback
+    const waURL   = `https://wa.me/${waMob}?text=${encodeURIComponent(waMsg)}`;
+
+    // ── Store on window for buttons ──
+    window._smsURL = smsURL;
+    window._waURL  = waURL;
+
+    // ── Set button hrefs ──
+    const smsBtn = document.getElementById('smsSendBtn');
+    const waBtn  = document.getElementById('waSendBtn');
+    if(smsBtn) smsBtn.href = smsURL;
+    if(waBtn)  waBtn.href  = waURL;
+
+    // ── Fill modal details ──
+    document.getElementById('modalDetail').innerHTML=`
+      ${row('Appointment ID', d.apptId)}
+      ${row('Patient',        d.name)}
+      ${row('Doctor',         d.doc+' — '+d.dept)}
+      ${row('Date & Time',    d.date+', '+d.time)}
+      ${row('Visit Type',     d.type)}
+      ${row('Mobile',         d.mob)}
+      ${row('Email',          d.email)}
+    `;
+    document.getElementById('confirmModal').classList.add('show');
+    btn.textContent='✅ Confirm Appointment';btn.disabled=false;
+  },1800);
+}
+
+function closeModal(){
+  document.getElementById('confirmModal').classList.remove('show');
+  setStep(1);
+  ['patName','patMobile','patEmail','patCity','patAge','apptReason','apptInsurance'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.value='';
+  });
+  ['patGender','patBlood','apptDept','apptDoc','apptDate','apptTime','apptType'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.selectedIndex=0;
+  });
+  document.getElementById('apptDoc').innerHTML='<option value="">Select Department First</option>';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── EmailJS config (replace with your real credentials from emailjs.com) ──
+const EMAILJS_CFG = {
+  serviceId  : "YOUR_SERVICE_ID",
+  templateId : "YOUR_TEMPLATE_ID",
+  publicKey  : "YOUR_PUBLIC_KEY"
+};
+const HOSPITAL_EMAIL = "info@medicureplus.in";
+
+function sendMessage() {
+  const errEl = document.getElementById('msgError');
+  errEl.style.display = 'none';
+
+  // Collect
+  const name   = (document.getElementById('msgName').value    || '').trim();
+  const mobile = (document.getElementById('msgMobile').value  || '').trim();
+  const email  = (document.getElementById('msgEmail').value   || '').trim();
+  const subj   = (document.getElementById('msgSubject').value || '').trim();
+  const body   = (document.getElementById('msgBody').value    || '').trim();
+
+  // Validate
+  const errs = [];
+  if (!name)   errs.push('Please enter your full name.');
+  if (!mobile) errs.push('Please enter your mobile number.');
+  else { const c = mobile.replace(/[\s\-]/g,''); if(!/^(\+91)?[6-9]\d{9}$/.test(c)) errs.push('Enter a valid Indian mobile number (10 digits, starts 6–9).'); }
+  if (!email)  errs.push('Please enter your email address.');
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.push('Enter a valid email address.');
+  if (!subj)   errs.push('Please select a subject.');
+  if (!body)   errs.push('Please write your message (min 10 characters).');
+  else if (body.length < 10) errs.push('Message too short — please write at least 10 characters.');
+
+  if (errs.length) {
+    errEl.innerHTML = '⚠️ ' + errs[0];
+    errEl.style.display = 'block';
+    errEl.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    return;
+  }
+
+  // Button sending state
+  const btn = document.getElementById('msgSendBtn');
+  btn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:8px;justify-content:center;">⏳ Sending…</span>';
+  btn.disabled  = true;
+  btn.style.opacity = '.75';
+
+  const refId = 'MSG' + Date.now().toString().slice(-8);
+  const ts    = new Date().toLocaleString('en-IN', { day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' });
+
+  const params = {
+    to_email: HOSPITAL_EMAIL, to_name: 'MediCurePlus Hospital Management',
+    from_name: name, from_email: email, from_mobile: mobile,
+    subject: subj, message: body, reference_id: refId, sent_at: ts,
+    reply_to: email
+  };
+
+  function showPopup() {
+    var overlay = document.getElementById('msgSentOverlay');
+    overlay.style.display = 'flex';
+    // Reset button state
+    btn.innerHTML = '📨 &nbsp;Send Message to Hospital';
+    btn.disabled  = false;
+    btn.style.opacity = '1';
+  }
+
+  if (typeof emailjs !== 'undefined' && EMAILJS_CFG.serviceId !== 'YOUR_SERVICE_ID') {
+    emailjs.init({ publicKey: EMAILJS_CFG.publicKey });
+    emailjs.send(EMAILJS_CFG.serviceId, EMAILJS_CFG.templateId, params)
+      .then(() => showPopup())
+      .catch(() => showPopup()); // still show popup even if email fails
+  } else {
+    // Demo mode — simulate 1.4s network delay
+    setTimeout(showPopup, 1400);
+  }
+}
+
+function clearMsgForm() {
+  // Clear all text fields only
+  ['msgName','msgMobile','msgEmail','msgBody'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  // Reset subject dropdown
+  var s = document.getElementById('msgSubject');
+  if (s) s.selectedIndex = 0;
+  // Hide error
+  var e = document.getElementById('msgError');
+  if (e) e.style.display = 'none';
+}
+
+function closeMsgPopup() {
+  document.getElementById('msgSentOverlay').style.display = 'none';
+  clearMsgForm();
+}
+
+// Close modal on overlay click
+document.getElementById('confirmModal').addEventListener('click',function(e){
+  if(e.target===this)closeModal();
+});
+</script>
+
+<!-- ═══════ MESSAGE SENT POPUP ═══════ -->
+<div id="msgSentOverlay" onclick="if(event.target===this)closeMsgPopup()" style="
+  display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;
+  background:rgba(0,0,0,.82);backdrop-filter:blur(8px);
+  align-items:center;justify-content:center;padding:20px;">
+  <div style="
+    background:linear-gradient(145deg,#061409 0%,#0b2612 60%,#061409 100%);
+    border:2px solid rgba(0,230,118,0.45);
+    border-radius:28px;padding:52px 40px 44px;
+    max-width:400px;width:100%;text-align:center;
+    box-shadow:0 0 0 1px rgba(0,230,118,.1),
+               0 30px 80px rgba(0,0,0,.95),
+               0 0 80px rgba(0,230,118,.18);
+    animation:msgPop .4s cubic-bezier(.175,.885,.32,1.275);">
+
+    <!-- Pulsing ring + tick -->
+    <div style="position:relative;width:96px;height:96px;margin:0 auto 28px;">
+      <div style="position:absolute;inset:-8px;border-radius:50%;
+        border:2px solid rgba(0,230,118,.3);animation:ringPulse 1.8s ease-out infinite;"></div>
+      <div style="position:absolute;inset:-16px;border-radius:50%;
+        border:1px solid rgba(0,230,118,.15);animation:ringPulse 1.8s .4s ease-out infinite;"></div>
+      <div style="width:96px;height:96px;border-radius:50%;
+        background:linear-gradient(135deg,#00E676,#00C853);
+        display:flex;align-items:center;justify-content:center;
+        font-size:46px;line-height:1;
+        box-shadow:0 0 40px rgba(0,230,118,.6),0 12px 30px rgba(0,230,118,.3);
+        animation:tickPop .45s .05s cubic-bezier(.175,.885,.32,1.275) both;">✓</div>
+    </div>
+
+    <!-- Message -->
+    <h2 style="
+      font-family:'Playfair Display',serif;
+      font-size:1.75rem;font-weight:900;
+      color:#ffffff;margin-bottom:14px;line-height:1.25;">
+      Message Sent!
+    </h2>
+    <p style="
+      font-size:1.08rem;font-weight:600;
+      color:#00E676;line-height:1.6;margin-bottom:10px;">
+      Hospital Team Will Contact<br>You Soon.
+    </p>
+    <p style="
+      font-size:.84rem;color:rgba(255,255,255,.45);
+      margin-bottom:34px;">
+      Thank you for reaching out to MediCurePlus Hospital.
+    </p>
+
+    <!-- OK Button -->
+    <button onclick="closeMsgPopup()" style="
+      width:100%;padding:16px;border-radius:14px;border:none;cursor:pointer;
+      background:linear-gradient(135deg,#00E676 0%,#00C853 100%);
+      color:#020A04;font-size:1.05rem;font-weight:900;letter-spacing:.8px;
+      box-shadow:0 8px 28px rgba(0,230,118,.45);
+      transition:transform .2s,box-shadow .2s;
+      font-family:'Inter',sans-serif;">
+      OK
+    </button>
+  </div>
+</div>
+
+<style>
+@keyframes msgPop {
+  from { opacity:0; transform:scale(.78) translateY(20px); }
+  to   { opacity:1; transform:scale(1)   translateY(0);   }
+}
+@keyframes tickPop {
+  from { transform:scale(0) rotate(-20deg); }
+  to   { transform:scale(1) rotate(0deg);  }
+}
+@keyframes ringPulse {
+  0%   { transform:scale(1);   opacity:.7; }
+  100% { transform:scale(1.55);opacity:0;  }
+}
+#msgSentOverlay button:hover {
+  transform:translateY(-2px);
+  box-shadow:0 12px 35px rgba(0,230,118,.6) !important;
+}
+</style>
+
+</body>
+</html>
